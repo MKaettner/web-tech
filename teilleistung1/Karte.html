@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<title>Rund um die Erba</title>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			html, body, #basicMap {
+				width: 80%;
+				height: 95%;
+				margin: 0;
+			}
+		</style>
+		<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+		<script>
+			function init() {
+				map = new OpenLayers.Map("basicMap");
+				var mapnik = new OpenLayers.Layer.OSM();
+				map.addLayer(mapnik);
+				map.setCenter(new OpenLayers.LonLat(10.8705, 49.9025)// Center of the map
+				.transform(new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+				new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
+				), 17 // Zoom level
+				);
+			}
+		</script>
+	</head>
+
+	<body onload="init();">
+		<header>
+			Kopfzeile
+		</header>
+		<nav>
+			Navigation
+		</nav>
+		<div id="basicMap">
+			<h2>Übersichtskarte der Erba</h2>
+
+		</div>
+	</body>
+</html>
