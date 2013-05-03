@@ -15,32 +15,37 @@ body {
 header {
 	background-color: #f5f5f5;
 	padding: 10px;
+	padding-bottom:0px;
 	display: block;
 	height: 151px;
 }
 header ul {
 	background-color: orange;
+	padding-bottom:0px;
 	margin: 0;
-	padding: 0.8em;
 	text-align: center;
 	border: 1px solid black;
 }
 
+
 header ul#Navigation li{
 	list-style: none;
     display: inline;
-    margin: 0.4em; padding: 0;
+    margin: 20px;
+    padding-bottom:0px;
 	background-color: #ccc;
 }
 
-header ul#Navigation a, ul#Navigation span{
-	padding: 0.2em 1em;
-    text-decoration: none; font-weight: bold;
+header ul#Navigation a{
+    text-decoration: none;
+    font-weight: bold;
     border: 1px solid black;
-    border-left-color: white; border-top-color: white;
-    color: maroon; background-color: #ccc;
-	
+    border-left-color: white;
+    border-top-color: white;
+    color: maroon;
+    padding-bottom:0px;
 }
+
 
 
 nav {
