@@ -9,7 +9,8 @@ padding: 0;
 
 header{
 	height: 100px;
-	background:#CCCCCC;
+	background:#003063;
+	color: #F5F5F5;
 }
 
 nav{
@@ -17,9 +18,11 @@ nav{
 	float: left;
 	background:#CCCCCC;
 	text-align: left;
+	min-height: 600px;
 }
 
 div#content{
-	background:#CCCCCC;
+	background:#F5F5F5;
 	margin-left: 150px;
+	min-height: 600px;
 }
