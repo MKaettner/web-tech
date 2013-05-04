@@ -1,0 +1,15 @@
+header{
+	height: 100px;
+	background:#CCCCCC;
+}
+
+nav{
+	width: 150px;
+	float: left;
+	background:#CCCCCC;
+	
+}
+
+div#content{
+	background:#CCCCCC;
+}
