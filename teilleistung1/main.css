@@ -2,11 +2,10 @@
 
 
 header{
-	position:relative;
+	
 }
 
 body {
-	position:relative;
 	font-family: Castellar;
 	background: yellow;
 	text-align: center;
@@ -14,9 +13,9 @@ body {
 
 /* der hintergrund im body ansprechen zu können*/
 #wrapper {
-	position: relative; top;
 	background-color: red;
 	width: 800px;
+	min-height: 600px;
 	
 }
 
@@ -79,6 +78,7 @@ aside {
 	background-color: #0404B4;
 	margin-left: 195px;
 	margin-right: 195px;
+	min-height:600px;
 	display: block;
 }
 
