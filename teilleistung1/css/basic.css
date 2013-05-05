@@ -52,5 +52,5 @@ ul.link-arrow-list a:hover {
     color: #990000;
 }
 ul.link-arrow-list li.link {
-    background:  url(images/link-pfeil.png) no-repeat scroll 0 8px transparent;
+    background:  url(../images/link-pfeil.png) no-repeat scroll 0 8px transparent;
 }
