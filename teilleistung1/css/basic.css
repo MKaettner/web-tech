@@ -23,18 +23,18 @@ nav {
 	text-align: left;
 	min-height: 600px;
 	border-right: 1px;
-	border-right-color: black;
-	border-right-style: solid;
+	border-right-color: #A0A0A0;
+	border-right-style: dotted;
 	padding-left: 5px;
 }
-
 ul#navigation {
+	font-size: 130%;
 	list-style-type: none;
-	padding-left: 10px;
-	padding-top: 10px;
+	padding-left: 20px;
+	padding-top: 20px;
 }
 ul#navigation li {
-
+	margin-bottom: 5px
 }
 ul#navigation a {
 	color: #000000;
@@ -44,7 +44,7 @@ ul#navigation a:hover {
 	color: #990000;
 }
 ul#navigation li.active {
-	font-weight:bold;
+	font-weight: bold;
 }
 
 div#content {
@@ -53,6 +53,7 @@ div#content {
 	min-height: 600px;
 	padding: 10px;
 	padding-left: 30px;
+	padding-top: 30px;
 }
 ul.link-arrow-list {
 	list-style-type: none;
