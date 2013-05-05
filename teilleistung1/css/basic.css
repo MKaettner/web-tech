@@ -35,3 +35,22 @@ div#content{
 	padding: 10px;
 	padding-left: 30px;
 }
+ul.link-arrow-list {
+    list-style-type: none;
+    overflow: hidden;
+}
+ul.link-arrow-list li {
+    margin-bottom: 4px;
+    padding-left: 10px;
+    position: relative;
+}
+ul.link-arrow-list a {
+    color: #333333;
+    text-decoration: none;
+}
+ul.link-arrow-list a:hover {
+    color: #990000;
+}
+ul.link-arrow-list li.link {
+    background:  url(images/link-pfeil.png) no-repeat scroll 0 8px transparent;
+}
