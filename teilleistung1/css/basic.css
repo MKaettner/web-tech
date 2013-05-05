@@ -9,11 +9,15 @@ header, nav {
 
 header {
 	height: 200px;
-	background: #800000;
-	color: #F5F5F5;
+	background: #E60000;
+	color: #1A1A1A;
 	border-bottom: 2px;
 	border-bottom-color: black;
 	border-bottom-style: solid;
+}
+
+header.navtab {
+	background: url(../images/tab.png) no-repeat transparent;
 }
 
 nav {
