@@ -1,25 +1,25 @@
-header, nav {  
+header, nav {
 	display: block;
 }
 
-* {     
-margin: 0;     
-padding: 0;     
+* {
+	margin: 0;
+	padding: 0;
 }
 
-header{
+header {
 	height: 200px;
-	background:#800000;
+	background: #800000;
 	color: #F5F5F5;
 	border-bottom: 2px;
 	border-bottom-color: black;
 	border-bottom-style: solid;
 }
 
-nav{
+nav {
 	width: 150px;
 	float: left;
-	background:#F5F5F5;
+	background: #F5F5F5;
 	text-align: left;
 	min-height: 600px;
 	border-right: 1px;
@@ -28,29 +28,48 @@ nav{
 	padding-left: 5px;
 }
 
-div#content{
-	background:#F5F5F5;
+ul#navigation {
+	list-style-type: none;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+ul#navigation li {
+
+}
+ul#navigation a {
+	color: #000000;
+	text-decoration: none;
+}
+ul#navigation a:hover {
+	color: #990000;
+}
+ul#navigation li.active {
+	font-weight:bold;
+}
+
+div#content {
+	background: #F5F5F5;
 	margin-left: 150px;
 	min-height: 600px;
 	padding: 10px;
 	padding-left: 30px;
 }
 ul.link-arrow-list {
-    list-style-type: none;
-    overflow: hidden;
+	list-style-type: none;
+	overflow: hidden;
 }
 ul.link-arrow-list li {
-    margin-bottom: 4px;
-    padding-left: 10px;
-    position: relative;
+	margin-bottom: 4px;
+	padding-left: 10px;
+	position: relative;
 }
 ul.link-arrow-list a {
-    color: #333333;
-    text-decoration: none;
+	color: #333333;
+	text-decoration: none;
 }
 ul.link-arrow-list a:hover {
-    color: #990000;
+	color: #990000;
 }
 ul.link-arrow-list li.link {
-    background:  url(../images/link-pfeil.png) no-repeat scroll 0 8px transparent;
+	background: url(../images/link-pfeil.png) no-repeat scroll 0 8px transparent;
 }
