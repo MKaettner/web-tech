@@ -20,6 +20,10 @@ header.navtab {
 	background: url(../images/tab.png) no-repeat transparent;
 }
 
+header h1{
+	padding: 30px;
+}
+
 nav {
 	width: 150px;
 	float: left;
