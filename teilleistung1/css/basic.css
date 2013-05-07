@@ -16,15 +16,15 @@ header {
 	border-bottom-style: solid;
 }
 
-header.navtab {
-	background: url(../images/tab.png) no-repeat transparent;
+nav.navtab {
+	
 }
 
 header h1{
 	padding: 30px;
 }
 
-nav {
+nav.navleft {
 	width: 150px;
 	float: left;
 	background: #F5F5F5;
