@@ -16,12 +16,31 @@ header {
 	border-bottom-style: solid;
 }
 
-nav.navtab {
-	
-}
-
 header h1{
 	padding: 30px;
+}
+
+.tablist{
+padding: 3px 0;
+margin: 0;
+margin-top: 82px;
+margin-left: 150px;
+font: bold 12px Verdana;
+}
+
+.tablist li{
+list-style: none;
+display: inline;
+margin: 0;
+}
+
+.tablist li a{
+text-decoration: none;
+padding: 3px 0.5em;
+margin-right: 3px;
+border: 1px solid #778;
+border-bottom: none;
+background: white;
 }
 
 nav.navleft {
