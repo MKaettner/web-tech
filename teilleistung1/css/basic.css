@@ -14,10 +14,12 @@ header {
 	border-bottom: 2px;
 	border-bottom-color: black;
 	border-bottom-style: solid;
+	min-width: 1000px;
 }
 
 header h1{
 	padding: 30px;
+	min-width: 1000px;
 }
 
 .tablist{
@@ -78,6 +80,7 @@ div#content {
 	background: #F5F5F5;
 	margin-left: 150px;
 	min-height: 600px;
+	min-width 1000px;
 	padding: 10px;
 	padding-left: 30px;
 	padding-top: 30px;
