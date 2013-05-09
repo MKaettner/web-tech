@@ -9,14 +9,43 @@ header, nav {
 
 header {
 	height: 200px;
-	background: #800000;
-	color: #F5F5F5;
+	background: #E60000;
+	color: #1A1A1A;
 	border-bottom: 2px;
 	border-bottom-color: black;
 	border-bottom-style: solid;
+	min-width: 1000px;
 }
 
-nav {
+header h1{
+	padding: 30px;
+	min-width: 1000px;
+}
+
+.tablist{
+padding: 3px 0;
+margin: 0;
+margin-top: 82px;
+margin-left: 150px;
+font: bold 12px Verdana;
+}
+
+.tablist li{
+list-style: none;
+display: inline;
+margin: 0;
+}
+
+.tablist li a{
+text-decoration: none;
+padding: 3px 0.5em;
+margin-right: 3px;
+border: 1px solid #778;
+border-bottom: none;
+background: white;
+}
+
+nav.navleft {
 	width: 150px;
 	float: left;
 	background: #F5F5F5;
@@ -51,6 +80,7 @@ div#content {
 	background: #F5F5F5;
 	margin-left: 150px;
 	min-height: 600px;
+	min-width 1000px;
 	padding: 10px;
 	padding-left: 30px;
 	padding-top: 30px;
