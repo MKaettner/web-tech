@@ -7,6 +7,14 @@ header, nav {
 	padding: 0;
 }
 
+a:hover{
+	color: #1A1A1A;
+}
+
+a:visited{
+	color: #777788;
+}
+
 header {
 	height: 200px;
 	background: #E60000;
@@ -25,9 +33,9 @@ header h1{
 .tablist{
 padding: 3px 0;
 margin: 0;
-margin-top: 82px;
+margin-top: 75px;
 margin-left: 180px;
-font: 12px Verdana;
+font: 18px Verdana;
 }
 
 .tablist li{
@@ -39,7 +47,7 @@ margin: 0;
 .tablist li a{
 text-decoration: none;
 color:#000000;
-padding: 3px 0.5em;
+padding: 3px;
 margin-right: 3px;
 border: 1px solid #778;
 border-bottom: none;
@@ -93,6 +101,8 @@ div.content {
 	padding-left: 30px;
 	padding-top: 30px;
 }
+
+
 ul.link-arrow-list {
 	list-style-type: none;
 	overflow: hidden;
