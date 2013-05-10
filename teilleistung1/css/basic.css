@@ -14,6 +14,11 @@ a:hover {
 a:visited {
 	color: #777788;
 }
+
+div#wrap{
+	background: #F5F5F5;
+}
+
 ul.adress{
 	padding-left: 30px;
 	padding-top: 10px;
@@ -72,9 +77,6 @@ nav.navleft {
 	background: #F5F5F5;
 	text-align: left;
 	min-height: 600px;
-	border-right: 1px;
-	border-right-color: #A0A0A0;
-	border-right-style: dotted;
 	padding-left: 5px;
 }
 ul#navigation {
@@ -105,7 +107,10 @@ div.content {
 	padding: 10px;
 	padding-left: 40px;
 	padding-top: 30px;
-	padding-bottom:100px
+	padding-bottom:100px;
+	border-left: 1px;
+	border-right-color: #A0A0A0;
+	border-right-style: dotted;
 }
 
 ul.link-arrow-list {
