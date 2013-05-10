@@ -100,7 +100,8 @@ ul#navigation li.active {
 div.content {
 	background: #F5F5F5;
 	margin-left: 150px;
-	min-height: 600px;min-width 1000px;
+	min-height: 600px;
+	min-width 1000px;
 	padding: 10px;
 	padding-left: 40px;
 	padding-top: 30px;
@@ -167,3 +168,4 @@ ul.link-arrow-list li.link {
 .toolbox_button a:hover {
 	text-decoration: underline
 }
+
