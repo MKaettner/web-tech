@@ -6,15 +6,6 @@ header, nav {
 	margin: 0;
 	padding: 0;
 }
-
-a:hover {
-	color: #1A1A1A;
-}
-
-a:visited {
-	color: #777788;
-}
-
 div#wrap{
 	background: #F5F5F5;
 }
