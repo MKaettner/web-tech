@@ -101,7 +101,7 @@ ul#navigation li.active {
 
 div.content {
 	background: #F5F5F5;
-	margin-left: 150px;
+	margin-left: 155px;
 	min-height: 600px;
 	min-width 1000px;
 	padding: 10px;
@@ -109,8 +109,8 @@ div.content {
 	padding-top: 30px;
 	padding-bottom:100px;
 	border-left: 1px;
-	border-right-color: #A0A0A0;
-	border-right-style: dotted;
+	border-left-color: #A0A0A0;
+	border-left-style: dotted;
 }
 
 ul.link-arrow-list {
