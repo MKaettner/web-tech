@@ -159,6 +159,7 @@ ul.adress a:hover {
 	color: #990000;
 }
 ul.adress li a.link {
+	padding-left:8px;
 	background: url(../images/link-pfeil.png) no-repeat scroll 0 8px transparent;
 }
 p.linkdescr {
