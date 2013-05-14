@@ -17,6 +17,7 @@ ul.adress {
 header {
 	height: 200px;
 	background: url(../images/Erba_1000_200.png) no-repeat;
+	background-position:center;
 	color: #1A1A1A;
 	border-bottom: 2px;
 	border-bottom-color: black;
