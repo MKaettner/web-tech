@@ -9,27 +9,10 @@ header, nav {
 div#wrap {
 	background: #F5F5F5;
 }
-
-ul.adress {
-	padding-left: 20px;
-	padding-top: 10px;
-}
-ul.adress li{
-	list-style-type: none;
-	padding-bottom:10px;
-	border-bottom-color: #A0A0A0;
-	border-bottom-style: dotted;
-	border-bottom-width:2px;
-}
-p.linkdescr{
-	border-bottom-color: #A0A0A0;
-	border-bottom-style: dotted;
-	border-bottom-width:2px;
-}
 header {
 	height: 200px;
 	background: url(../images/Erba_1000_200.png) no-repeat;
-	background-position:center;
+	background-position: center;
 	background-color: #F5F5F5;
 	border-bottom: 2px;
 	border-bottom-color: black;
@@ -138,24 +121,51 @@ ul.link-arrow-list li.link {
 	background: url(../images/link-pfeil.png) no-repeat scroll 0 8px transparent;
 }
 a.mailto {
-	color:#333333;
-	text-decoration:none;
-	padding-left:14px;
+	color: #333333;
+	text-decoration: none;
+	padding-left: 14px;
 	background: url(../images/mailto.png) no-repeat scroll 0 6px transparent;
 }
 a.mailto:hover {
-	color:#990000
+	color: #990000
 }
 a.maplink {
-	color:#333333;
-	text-decoration:none;
-	padding-left:14px;
+	color: #333333;
+	text-decoration: none;
+	padding-left: 14px;
 	background: url(../images/maplink.png) no-repeat scroll 0 4px transparent;
 }
 a.maplink:hover {
-	color:#990000
+	color: #990000
 }
 
+ul.adress {
+	padding-left: 20px;
+	padding-top: 10px;
+}
+ul.adress li {
+	list-style-type: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom-color: #A0A0A0;
+	border-bottom-style: dotted;
+	border-bottom-width: 2px;
+}
+ul.adress a {
+	color: #333333;
+	text-decoration: none;
+}
+ul.adress a:hover {
+	color: #990000;
+}
+ul.adress li a.link {
+	background: url(../images/link-pfeil.png) no-repeat scroll 0 8px transparent;
+}
+p.linkdescr {
+	border-bottom-color: #A0A0A0;
+	border-bottom-style: dotted;
+	border-bottom-width: 2px;
+}
 .efabody {
 	font: 9px Verdana;
 	color: black
