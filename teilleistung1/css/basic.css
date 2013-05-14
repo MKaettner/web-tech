@@ -11,8 +11,20 @@ div#wrap {
 }
 
 ul.adress {
-	padding-left: 30px;
+	padding-left: 20px;
 	padding-top: 10px;
+}
+ul.adress li{
+	list-style-type: none;
+	padding-bottom:10px;
+	border-bottom-color: #A0A0A0;
+	border-bottom-style: dotted;
+	border-bottom-width:2px;
+}
+p.linkdescr{
+	border-bottom-color: #A0A0A0;
+	border-bottom-style: dotted;
+	border-bottom-width:2px;
 }
 header {
 	height: 200px;
@@ -124,6 +136,24 @@ ul.link-arrow-list a:hover {
 }
 ul.link-arrow-list li.link {
 	background: url(../images/link-pfeil.png) no-repeat scroll 0 8px transparent;
+}
+a.mailto {
+	color:#333333;
+	text-decoration:none;
+	padding-left:14px;
+	background: url(../images/mailto.png) no-repeat scroll 0 6px transparent;
+}
+a.mailto:hover {
+	color:#990000
+}
+a.maplink {
+	color:#333333;
+	text-decoration:none;
+	padding-left:14px;
+	background: url(../images/maplink.png) no-repeat scroll 0 4px transparent;
+}
+a.maplink:hover {
+	color:#990000
 }
 
 .efabody {
