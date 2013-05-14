@@ -6,17 +6,17 @@ header, nav {
 	margin: 0;
 	padding: 0;
 }
-div#wrap{
+div#wrap {
 	background: #F5F5F5;
 }
 
-ul.adress{
+ul.adress {
 	padding-left: 30px;
 	padding-top: 10px;
 }
 header {
 	height: 200px;
-	background: #E60000;
+	background: url(../images/Erba_1000_200.png) no-repeat;
 	color: #1A1A1A;
 	border-bottom: 2px;
 	border-bottom-color: black;
@@ -29,7 +29,7 @@ header h1 {
 	min-width: 1000px;
 }
 h2 {
-	margin-bottom:10px;
+	margin-bottom: 10px;
 }
 
 .tablist {
@@ -93,12 +93,11 @@ ul#navigation li.active {
 div.content {
 	background: #F5F5F5;
 	margin-left: 155px;
-	min-height: 600px;
-	min-width 1000px;
+	min-height: 600px;min-width 1000px;
 	padding: 10px;
 	padding-left: 40px;
 	padding-top: 30px;
-	padding-bottom:100px;
+	padding-bottom: 100px;
 	border-left: 1px;
 	border-left-color: #A0A0A0;
 	border-left-style: dotted;
@@ -107,8 +106,8 @@ div.content {
 ul.link-arrow-list {
 	list-style-type: none;
 	overflow: hidden;
-	padding-top:10px;
-	padding-left:10px;
+	padding-top: 10px;
+	padding-left: 10px;
 }
 ul.link-arrow-list li {
 	margin-bottom: 8px;
@@ -123,7 +122,7 @@ ul.link-arrow-list a:hover {
 	color: #990000;
 }
 ul.link-arrow-list li.link {
-	background:url(../images/link-pfeil.png) no-repeat scroll 0 8px transparent;
+	background: url(../images/link-pfeil.png) no-repeat scroll 0 8px transparent;
 }
 
 .efabody {
@@ -164,5 +163,4 @@ ul.link-arrow-list li.link {
 .toolbox_button a:hover {
 	text-decoration: underline
 }
-
 
