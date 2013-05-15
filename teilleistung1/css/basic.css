@@ -12,6 +12,8 @@ div#wrap {
 header {
 	height: 200px;
 	background: url(../images/Erba_1000_200.png) no-repeat;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
 	background-position: center;
 	background-color: #F5F5F5;
 	border-bottom: 2px;
@@ -101,7 +103,6 @@ div.content {
 
 ul.link-arrow-list {
 	list-style-type: none;
-	overflow: hidden;
 	padding-top: 10px;
 	padding-left: 10px;
 }
@@ -158,8 +159,8 @@ ul.adress a {
 ul.adress a:hover {
 	color: #990000;
 }
-ul.adress li a.link {
-	padding-left:8px;
+ul.adress a.link {
+	padding-left: 8px;
 	background: url(../images/link-pfeil.png) no-repeat scroll 0 8px transparent;
 }
 p.linkdescr {
@@ -167,6 +168,19 @@ p.linkdescr {
 	border-bottom-style: dotted;
 	border-bottom-width: 2px;
 }
+div#vgn {
+	padding-top: 30px;
+	width: 400px;
+	height: 93px;
+	margin: 0 auto;
+}
+div#video {
+	padding-top: 30px;
+	width: 640px;
+	height: 360px;
+	margin: 0 auto;
+}
+/* Code ab hier bereitgestellt von vgn.de */
 .efabody {
 	font: 9px Verdana;
 	color: black
@@ -205,4 +219,4 @@ p.linkdescr {
 .toolbox_button a:hover {
 	text-decoration: underline
 }
-
+/* Code bis hier bereitgestellt von vgn.de */

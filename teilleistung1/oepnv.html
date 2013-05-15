@@ -49,113 +49,112 @@
 				</ul>
 			</nav>
 			<div class="content">
-				<h2> Fahrplan-Auskunft des VGN
-				<br />
-				<br />
-				</h2>
+				<h2> Fahrplan-Auskunft des VGN </h2>
 				<p>
-					Hier könnt ihr eine Nahverkehrsverbindung raussuchen, wir haben euch als Startort schonmal die Erba-Haltestelle "Gaustadt Spinnerei" eingetragen.
-					<br />
-					<br />
+					<em>Hier könnt ihr eine Nahverkehrsverbindung raussuchen, wir haben euch als Startort schonmal die Erba-Haltestelle "Gaustadt Spinnerei" eingetragen.</em>
 				</p>
-				<form name="vgn_efabanner" action="http://vgn.de/komfortauskunft/auskunft/" method="post" target="_blank">
-					<input type="hidden" name="usage" value="xslt_trip">
-					<input type="hidden" name="command" value="">
-					<input type="hidden" name="execInst" value="verifyOnly">
-					<input type="hidden" name="sessionID" value="0">
-					<input type="hidden" name="ptOptionsActive" value="1">
-					<input type="hidden" name="lineRestriction" value="402">
-					<div style="width:400px;">
-						<div style="padding:1px; border:1px solid #40648A">
-							<table cellpadding="0" cellspacing="0" border="0">
-								<tr valign="top">
-									<td bgcolor="white"><img src="http://vgn.de/boxes/vgnBanner/elements/vgn.gif"></td>
-									<td>
-									<div style="background-color:#40648A;width:345px"><img src="http://vgn.de/boxes/vgnBanner/elements/fahrplan.gif">
-									</div>
-									<div style="width:345px;">
-										<div
-										name="EFABox" style="padding:4px; padding-left:7px; padding-bottom:2px;
-										background-color:#BFCBD8;
-										border:1px solid #40648A; border-top-style:none;">
-											<table cellspacing="0" cellpadding="0" border="0">
-
-												<input type="hidden" name="placeInfo_origin" value="invalid">
-												<input
-												type="hidden" name="nameInfo_origin" value="invalid">
-												<tr>
-													<td align="LEFT" class="efabody">von</td>
-													<td>&nbsp;</TD>
-													<td class="efabody">
-													<input type="text" class="input"
-													name="place_origin" value="Bamberg" size="30" maxlength="30">
-													<input
-													type="hidden" name="placeState_origin" value="empty">
-													</td>
-													<td>&nbsp;</TD>
-													<td class="efabody">
-													<select
-													name="type_origin" class="input">
-														<option value="stop">Haltestelle <option value="address">Stra&szlig;e/Hausnr. <option value="poi">wichtige Punkte
-													</select></td>
-													<td>&nbsp;</TD>
-													<td class="efabody">
-													<input type="text" class="input"
-													name="name_origin" value="Gaustadt Spinnerei" size="30" maxlength="30">
-													<input
-													type="hidden" name="nameState_origin" value="empty">
-													</td>
-												</tr>
-
-												<input type="hidden" name="placeInfo_destination" value="invalid">
-												<input
-												type="hidden" name="nameInfo_destination" value="invalid">
-												<tr>
-													<td align="LEFT" class="efabody">nach</td>
-													<td>&nbsp;</TD>
-													<td class="efabody">
-													<input type="text" class="input"
-													name="place_destination" class="input" value="Stadt / Ort" size="29" maxlength="30">
-													<input
-													type="hidden" name="placeState_destination" value="empty">
-													</td>
-													<td>&nbsp;</TD>
-													<td class="efabody">
-													<select
-													name="type_destination" class="input">
-														<option value="stop">Haltestelle <option value="address">Stra&szlig;e/Hausnr. <option value="poi">wichtige Punkte
-													</select></td>
-													<td>&nbsp;</TD>
-													<td class="efabody">
-													<input type="text" class="input"
-													name="name_destination" value="" size="29" maxlength="30">
-													<input
-													type="hidden" name="nameState_destination" value="empty">
-													</td>
-												</tr>
-
-												<tr>
-													<td align="LEFT" class="efabody">am</td>
-													<td>&nbsp;</TD>
-													<td class="efabody" colspan="3">
-													<input type="text"
-													name="xdate" value="" size="30" maxlength="10"  class="inputdate">
-													&nbsp;&nbsp;um&nbsp;&nbsp;
-													<input
-													type="text" name="xtime" value=""  class="inputtime">
-													</td>
-													<td>&nbsp;</TD>
-													<td align="right" class="toolbox_button"><a
-													href="javascript:document.forms.vgn_efabanner.submit()"> abfragen<img
-													src="http://vgn.de/boxes/vgnBanner/elements/bn_send_a.gif" width="11" height="11" border="0" alt="" style="margin-left:5px; vertical-align:bottom"></A></td>
-												</tr>
-											</table>
+				<div id="vgn">
+					<!-- Code ab hier bereitgestellt von vgn.de
+					Teilweise manuelle Anpassung der Breite einiger Elemente -->
+					<form name="vgn_efabanner" action="http://vgn.de/komfortauskunft/auskunft/" method="post" target="_blank">
+						<input type="hidden" name="usage" value="xslt_trip">
+						<input type="hidden" name="command" value="">
+						<input type="hidden" name="execInst" value="verifyOnly">
+						<input type="hidden" name="sessionID" value="0">
+						<input type="hidden" name="ptOptionsActive" value="1">
+						<input type="hidden" name="lineRestriction" value="402">
+						<div style="width:400px;">
+							<div style="padding:1px; border:1px solid #40648A">
+								<table cellpadding="0" cellspacing="0" border="0">
+									<tr valign="top">
+										<td bgcolor="white"><img src="http://vgn.de/boxes/vgnBanner/elements/vgn.gif"></td>
+										<td>
+										<div style="background-color:#40648A;width:345px"><img src="http://vgn.de/boxes/vgnBanner/elements/fahrplan.gif">
 										</div>
-									</div></td>
-								</tr>
-							</table>
+										<div style="width:345px;">
+											<div
+											name="EFABox" style="padding:4px; padding-left:7px; padding-bottom:2px;
+											background-color:#BFCBD8;
+											border:1px solid #40648A; border-top-style:none;">
+												<table cellspacing="0" cellpadding="0" border="0">
+
+													<input type="hidden" name="placeInfo_origin" value="invalid">
+													<input
+													type="hidden" name="nameInfo_origin" value="invalid">
+													<tr>
+														<td align="LEFT" class="efabody">von</td>
+														<td>&nbsp;</TD>
+														<td class="efabody">
+														<input type="text" class="input"
+														name="place_origin" value="Bamberg" size="30" maxlength="30">
+														<input
+														type="hidden" name="placeState_origin" value="empty">
+														</td>
+														<td>&nbsp;</TD>
+														<td class="efabody">
+														<select
+														name="type_origin" class="input">
+															<option value="stop">Haltestelle <option value="address">Stra&szlig;e/Hausnr. <option value="poi">wichtige Punkte
+														</select></td>
+														<td>&nbsp;</TD>
+														<td class="efabody">
+														<input type="text" class="input"
+														name="name_origin" value="Gaustadt Spinnerei" size="30" maxlength="30">
+														<input
+														type="hidden" name="nameState_origin" value="empty">
+														</td>
+													</tr>
+
+													<input type="hidden" name="placeInfo_destination" value="invalid">
+													<input
+													type="hidden" name="nameInfo_destination" value="invalid">
+													<tr>
+														<td align="LEFT" class="efabody">nach</td>
+														<td>&nbsp;</TD>
+														<td class="efabody">
+														<input type="text" class="input"
+														name="place_destination" class="input" value="Stadt / Ort" size="29" maxlength="30">
+														<input
+														type="hidden" name="placeState_destination" value="empty">
+														</td>
+														<td>&nbsp;</TD>
+														<td class="efabody">
+														<select
+														name="type_destination" class="input">
+															<option value="stop">Haltestelle <option value="address">Stra&szlig;e/Hausnr. <option value="poi">wichtige Punkte
+														</select></td>
+														<td>&nbsp;</TD>
+														<td class="efabody">
+														<input type="text" class="input"
+														name="name_destination" value="" size="29" maxlength="30">
+														<input
+														type="hidden" name="nameState_destination" value="empty">
+														</td>
+													</tr>
+
+													<tr>
+														<td align="LEFT" class="efabody">am</td>
+														<td>&nbsp;</TD>
+														<td class="efabody" colspan="3">
+														<input type="text"
+														name="xdate" value="" size="30" maxlength="10"  class="inputdate">
+														&nbsp;&nbsp;um&nbsp;&nbsp;
+														<input
+														type="text" name="xtime" value=""  class="inputtime">
+														</td>
+														<td>&nbsp;</TD>
+														<td align="right" class="toolbox_button"><a
+														href="javascript:document.forms.vgn_efabanner.submit()"> abfragen<img
+														src="http://vgn.de/boxes/vgnBanner/elements/bn_send_a.gif" width="11" height="11" border="0" alt="" style="margin-left:5px; vertical-align:bottom"></A></td>
+													</tr>
+												</table>
+											</div>
+										</div></td>
+									</tr>
+								</table>
+							</div>
 						</div>
-					</div>
+				</div>
 				</form>
 
 				<script language="JavaScript" type="text/javascript">
@@ -171,6 +170,8 @@
 						document.forms.vgn_efabanner.xdate.value = dd + "." + mm + ".";
 					}
 				</script>
+				<!-- Code bis hier bereitgestellt von vgn.de -->
+
 			</div>
 		</div>
 	</body>
