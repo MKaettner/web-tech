@@ -8,4 +8,4 @@ function register(){
 		// hier kann die Antwort des Servers verarbeitet werden!
 		window.alert(data.msg);
 	} );
-} 
+}
