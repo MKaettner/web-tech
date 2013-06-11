@@ -3,12 +3,21 @@
 	<head>
 		<script type="text/javascript" src="functions.js"></script>
 		<link rel="stylesheet" href="basic.css"/>
+		<script type="text/javascript" src="jquery-1.10.1.min.js"></script>
 	</head
 	>
 	<body>
 		<header><h1>Eine Javascript Testseite</h1></header>
 		<nav class="navleft">
-			Hier kommt eine kleine Navigation dazu
+			<ul id="navigation">
+				<li class="active">
+					<a href="index.html">Registrierung</a>
+				</li>
+				<li class="navigation">
+					<a href="">Login</a>
+				</li>
+				//.....
+			</ul>
 		</nav>
 		<div class="content">Hier werden die entsprechenden HTML Konstrukte zum Aufruf des Javascript angelegt
 			<form>
