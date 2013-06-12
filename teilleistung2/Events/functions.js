@@ -9,8 +9,8 @@ function register(){
         password: userpassword
     },
 	function(data) {
-		//$("#message").remove... muss message wieder löschen
-		$("#message").append(data.msg);
+		$("#message").html(""); //leert message 
+		$("#message").append(data.msg); 
 	} ); 
 }
 
