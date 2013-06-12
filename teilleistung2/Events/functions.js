@@ -27,7 +27,7 @@ function login(){
 	function(data) {
 		if(data.error=="false"){
 			alert("Login successfull!");
-			//window.location.href="";
+			window.location.href="user.html";
 		}
 		else{
 			alert("Username or Password invalid!");
