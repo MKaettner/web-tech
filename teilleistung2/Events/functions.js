@@ -25,6 +25,12 @@ function login(){
         password: userpassword		
 	},
 	function(data) {
-		alert(JSON.stringify(data));
+		if(data.error=="false"){
+			alert("Login successfull!");
+			//window.location.href="";
+		}
+		else{
+			alert("Username or Password invalid!");
+		}
 	});
 }
