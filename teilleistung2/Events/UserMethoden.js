@@ -38,3 +38,11 @@ function login(){
 function logout(){
 	alert("not yet implemented!");
 }
+
+function list_events_of_user(){
+	alert("not yet implemented!");
+}
+
+function list_tasks_of_user(){
+	alert("not yet implemented!");
+}
