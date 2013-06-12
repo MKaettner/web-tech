@@ -4,23 +4,17 @@
 		<script type="text/javascript" src="functions.js"></script>
 		<link rel="stylesheet" href="basic.css"/>
 		<script type="text/javascript" src="jquery-1.10.1.min.js"></script>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	</head>
 	<body>
 		<header><h1>Eine Javascript Testseite</h1></header>
-		<nav class="navleft">
-			<ul id="navigation">
-				<li class="active">
-					<a href="index.html">Registrierung</a>
-				</li>
-				<li class="navigation">
-					<a href="login.html">Login</a>
-				</li>
-			</ul>
-		</nav>
-		<div class="content">Geben Sie hier einen Namen sowie ein Passwort an, um sich zu registrieren.<br>
+		<div>
+				Geben Sie hier ihren Namen sowie ihr Passwort an, um sich einzuloggen.<br>
 				Name: <input type="text" name="name" id="username" value="User"><br>
 				Password: <input type="password" name="pwd" id="userpwd" value="password"><br>
-				<button onclick="register();">registrieren</button>
+				<button onclick="login();">login</button><br>
+				<br>
+				Noch nicht registriert? <a href="register.html">Registrieren</a>
 		</div>
 	</body>
 </html>

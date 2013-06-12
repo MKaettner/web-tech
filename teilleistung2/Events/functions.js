@@ -9,8 +9,8 @@ function register(){
         password: userpassword
     },
 	function(data) {
-		// hier kann die Antwort des Servers verarbeitet werden!
-		alert(JSON.stringify(data));
+		//$("#message").remove... muss message wieder löschen
+		$("#message").append(data.msg);
 	} ); 
 }
 
