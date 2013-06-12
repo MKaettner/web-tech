@@ -12,5 +12,19 @@ function register(){
 		// hier kann die Antwort des Servers verarbeitet werden!
 		alert(JSON.stringify(data));
 	} ); 
+}
+
+function login(){
 	
+	var username = document.getElementById("username").value;
+	var userpassword = document.getElementById("userpwd").value;
+	
+	$.getJSON("ctrls/users.php", {
+		operation: "login",
+        name: username,
+        password: userpassword		
+	},
+	function(data) {
+		alert(JSON.stringify(data));
+	});
 }
