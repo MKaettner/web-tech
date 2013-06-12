@@ -24,6 +24,12 @@ header h1 {
 	padding: 30px;
 	min-width: 1000px;
 }
+
+#logout{
+	float: right;
+	margin-right: 20px;
+}
+
 h2 {
 	margin-bottom: 10px;
 }

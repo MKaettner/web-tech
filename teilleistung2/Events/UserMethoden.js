@@ -34,3 +34,7 @@ function login(){
 		}
 	});
 }
+
+function logout(){
+	alert("not yet implemented!");
+}
