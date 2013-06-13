@@ -64,7 +64,10 @@ function list_events_of_user(){
 			var title = value.title;
 			var desc = value.description;
 			var date = value.date;
-			
+			// tabellenzeile hinzufügen
+			$("#datatable").append(
+				"<tr> <td> " + id + "</td> <td> " + title + "</td> <td> " + desc + "</td> <td> " + date + "</td>"
+			);
 		});
 	});
 }
