@@ -8,5 +8,13 @@ button{
 }
 
 #datatable{
-	
+	border: 1px solid black;
+	 
+}
+
+#datatable td, #datatable th{
+	font-size: 20px;
+	padding: 3px;
+	padding-left: 20px;
+	padding right: 20px;
 }
