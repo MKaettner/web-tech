@@ -77,13 +77,22 @@ function list_tasks_of_user(){
 		operation: "list_tasks_of_user"
 	},
 	function(data) {
+		//leert die Tabelle
+		$("#datatable").html("");
+		//fuegt den tableheader ein
+		$("#datatable").append(
+				"<tr> <th>Event ID</th> <th>Titel</th> <th>Aufgabe</th> <th>Stichtag</th> </tr>"
+		);
 		$.each(data.tasks, function(key, value){
 			// auslesen der JSON Objekte in Variablen
 			var id = value.eid;
 			var event = value.event;
 			var task = value.task;
 			var due = value.due;
-			
+			// tabellenzeile einfügen
+			$("#datatable").append(
+				"<tr> <td> " + id + "</td> <td> " + event + "</td> <td> " + task + "</td> <td> " + due + "</td>"
+			);
 		});
 	});
 }
