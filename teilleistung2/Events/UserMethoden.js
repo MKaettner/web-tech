@@ -51,6 +51,8 @@ function list_events_of_user(){
         operation: "list_events_of_user"
     },
 	function(data) {
+		//$.each(data.events, function(){
+		//});
 		alert(data.msg);
 	});
 	
