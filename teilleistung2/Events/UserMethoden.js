@@ -36,13 +36,47 @@ function login(){
 }
 
 function logout(){
-	alert("not yet implemented!");
+		$.getJSON("ctrls/users.php", {
+        operation: "logout"
+    },
+	function(data) {
+		alert(data.msg);
+		window.location.href="index.html";
+	});
 }
 
 function list_events_of_user(){
-	alert("not yet implemented!");
+	
+	$.getJSON("ctrls/users.php", {
+        operation: "list_events_of_user"
+    },
+	function(data) {
+		alert(data.msg);
+	});
+	
 }
 
 function list_tasks_of_user(){
-	alert("not yet implemented!");
+	$.getJSON("ctrls/users.php", {
+		operation: "list_tasks_of_user"
+	},
+	function(data) {
+		alert(data.msg);
+	});
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
