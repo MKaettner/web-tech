@@ -51,11 +51,22 @@ function list_events_of_user(){
         operation: "list_events_of_user"
     },
 	function(data) {
-		//$.each(data.events, function(){
-		//});
-		alert(data.msg);
+		//leert die Tabelle
+		$("#datatable").html("");
+		//fuegt den tableheader ein
+		$("#datatable").append(
+				"<tr> <th>Event ID</th> <th>Titel</th> <th>Beschreibung</th> <th>Datum</th> </tr>"
+		);
+		
+		$.each(data.events, function(key, value){
+			// auslesen der JSON Objekte in Variablen
+			var id = value.eid;
+			var title = value.title;
+			var desc = value.description;
+			var date = value.date;
+			
+		});
 	});
-	
 }
 
 function list_tasks_of_user(){
@@ -63,7 +74,14 @@ function list_tasks_of_user(){
 		operation: "list_tasks_of_user"
 	},
 	function(data) {
-		alert(data.msg);
+		$.each(data.tasks, function(key, value){
+			// auslesen der JSON Objekte in Variablen
+			var id = value.eid;
+			var event = value.event;
+			var task = value.task;
+			var due = value.due;
+			
+		});
 	});
 }
 
