@@ -23,3 +23,15 @@ function list_events(){
 		});
 	});
 }
+
+function list_users_of_event(){
+	
+	var eid = document.getElementById("eventID").value
+	$.getJSON('ctrls/events.php', {
+        operation: 'list_users_of_event',
+        eid: eid
+    },
+	function(data) {
+		
+	});
+}

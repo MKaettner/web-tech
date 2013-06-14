@@ -23,6 +23,11 @@
 				Hier können Sie sämtliche Aktivitäten das Event betreffed durchführen. <br>
 				<button id="listallevents" onclick="list_events();">Events auflisten</button>
 				<table id="datatable"></table>
+				<br>
+				Um die User oder Tasks eines Events aufzulisten, geben Sie bitte die ID des entsprechenden Events an.<br>
+				<button onclick="list_users_of_event();">User auflisten</button>
+				<button onclick="list_tasks_of_event();">Tasks auflisten</button>
+				<input value="EventID" id="eventID"/>
 			</p>
 		</div>
 	</body>
