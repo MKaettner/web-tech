@@ -82,5 +82,12 @@ function create(){
 }
 
 function join(){
-	alert("not yet implemented");
+	var id = document.getElementById("eventID").value;
+	$.getJSON('ctrls/events.php', {
+        operation: 'join',
+        eid: id
+    },
+	function(data) {
+		alert(data.msg);
+	});
 }
