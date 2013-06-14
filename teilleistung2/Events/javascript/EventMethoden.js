@@ -65,7 +65,20 @@ function list_tasks_of_event(){
 }
 
 function create(){
-	alert("note yet implemented");
+	
+	var etitle = document.getElementById("title").value; 
+	var edesc = document.getElementById("desc").value;
+	var edate = document.getElementById("date").value;
+	
+	$.getJSON('ctrls/events.php', {
+        operation: 'create',
+        title: etitle,
+        description: edesc,
+        date: edate
+    },
+	function(data) {
+		alert(data.msg);
+	});
 }
 
 function join(){
