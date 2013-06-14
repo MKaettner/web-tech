@@ -26,18 +26,48 @@ function list_events(){
 
 function list_users_of_event(){
 	
-	var eid = document.getElementById("eventID").value
+	var id = document.getElementById("eventID").value
 	$.getJSON('ctrls/events.php', {
         operation: 'list_users_of_event',
-        eid: eid
+        eid: id
     },
 	function(data) {
 		$("#datatable2").html("");
-		$("#datatable2").append("<th>Name</th>");
+		$("#datatable2").append("<tr><th>Name</th></tr>");
 		$.each(data.events, function(key, value){
 			//JSON Objekt in variable
 			var name = value.name;
 			$("#datatable2").append("<tr><td> " + name + "</td></tr>");
 		});
 	});
+}
+
+function list_tasks_of_event(){
+	
+	var id = document.getElementById("eventID").value
+	$.getJSON('ctrls/events.php', {
+        operation: 'list_tasks_of_event',
+        eid: id
+    },
+	function(data) {
+		$("#datatable2").html("");
+		$("#datatable2").append("<tr><th>ID</th><th>Titel</th><th>Umfang</th></tr>");
+		$.each(data.events, function(key, value){
+			//JSON Objekt in variable
+			var id = value.tid;
+			var titel = value.titel;
+			var volume = value.volume;
+			$("#datatable2").append(
+				"<tr><td> " + id + "</td><td>"+ titel + "</td><td>" + volume +"</td></tr>"
+			);
+		});
+	});
+}
+
+function create(){
+	alert("note yet implemented");
+}
+
+function join(){
+	alert("not yet implemented");
 }
