@@ -32,6 +32,12 @@ function list_users_of_event(){
         eid: eid
     },
 	function(data) {
-		
+		$("#datatable2").html("");
+		$("#datatable2").append("<th>Name</th>");
+		$.each(data.events, function(key, value){
+			//JSON Objekt in variable
+			var name = value.name;
+			$("#datatable2").append("<tr><td> " + name + "</td></tr>");
+		});
 	});
 }
