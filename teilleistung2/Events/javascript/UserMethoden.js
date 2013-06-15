@@ -41,6 +41,7 @@ function logout(){
     },
 	function(data) {
 		alert(data.msg);
+		if(error = "false")
 		window.location.href="index.html";
 	});
 }
@@ -53,22 +54,28 @@ function list_events_of_user(){
 	function(data) {
 		//leert die Tabelle
 		$("#datatable").html("");
-		//fuegt den tableheader ein
-		$("#datatable").append(
-				"<tr> <th>Event ID</th> <th>Titel</th> <th>Beschreibung</th> <th>Datum</th> </tr>"
-		);
-		
-		$.each(data.events, function(key, value){
-			// auslesen der JSON Objekte in Variablen
-			var id = value.eid;
-			var title = value.title;
-			var desc = value.description;
-			var date = value.date;
-			// tabellenzeile hinzufügen
+		if(data.error=="false"){
+			//fuegt den tableheader ein
 			$("#datatable").append(
-				"<tr> <td> " + id + "</td> <td> " + title + "</td> <td> " + desc + "</td> <td> " + date + "</td>"
+					"<tr> <th>Event ID</th> <th>Titel</th> <th>Beschreibung</th> <th>Datum</th> </tr>"
 			);
-		});
+		
+			$.each(data.events, function(key, value){
+			
+				// auslesen der JSON Objekte in Variablen
+				var id = value.eid;
+				var title = value.title;
+				var desc = value.description;
+				var date = value.date;
+				// tabellenzeile hinzufügen
+				$("#datatable").append(
+					"<tr> <td> " + id + "</td> <td> " + title + "</td> <td> " + desc + "</td> <td> " + date + "</td>"
+				);
+			});
+		}
+		else{
+				alert(data.msg);
+			}
 	});
 }
 
@@ -79,21 +86,26 @@ function list_tasks_of_user(){
 	function(data) {
 		//leert die Tabelle
 		$("#datatable").html("");
-		//fuegt den tableheader ein
-		$("#datatable").append(
-				"<tr> <th>Event ID</th> <th>Titel</th> <th>Aufgabe</th> <th>Stichtag</th> </tr>"
-		);
-		$.each(data.tasks, function(key, value){
-			// auslesen der JSON Objekte in Variablen
-			var id = value.eid;
-			var event = value.event;
-			var task = value.task;
-			var due = value.due;
-			// tabellenzeile einfügen
+		if(data.error=="false"){
+			//fuegt den tableheader ein
 			$("#datatable").append(
-				"<tr> <td> " + id + "</td> <td> " + event + "</td> <td> " + task + "</td> <td> " + due + "</td>"
+					"<tr> <th>Event ID</th> <th>Titel</th> <th>Aufgabe</th> <th>Stichtag</th> </tr>"
 			);
-		});
+			$.each(data.tasks, function(key, value){
+				// auslesen der JSON Objekte in Variablen
+				var id = value.eid;
+				var event = value.event;
+				var task = value.task;
+				var due = value.due;
+				// tabellenzeile einfügen
+				$("#datatable").append(
+					"<tr> <td> " + id + "</td> <td> " + event + "</td> <td> " + task + "</td> <td> " + due + "</td>"
+				);
+			});
+		}
+		else{
+			alert(data.msg);
+		}
 	});
 }
 

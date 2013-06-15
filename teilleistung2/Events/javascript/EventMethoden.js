@@ -5,22 +5,29 @@ function list_events(){
 	function(data) {
 	//leert die Tabelle
 		$("#datatable").html("");
-		//fuegt den tableheader ein
-		$("#datatable").append(
-				"<tr> <th>Event ID</th> <th>Titel</th> <th>Beschreibung</th> <th>Datum</th> </tr>"
-		);
-		
-		$.each(data.events, function(key, value){
-			// auslesen der JSON Objekte in Variablen
-			var id = value.eid;
-			var title = value.title;
-			var desc = value.description;
-			var date = value.date;
-			// tabellenzeile hinzufügen
+		if(data.error == "false"){
+			//fuegt den tableheader ein
 			$("#datatable").append(
-				"<tr> <td> " + id + "</td> <td> " + title + "</td> <td> " + desc + "</td> <td> " + date + "</td>"
+					"<tr> <th>Event ID</th> <th>Titel</th> <th>Beschreibung</th> <th>Datum</th> </tr>"
 			);
-		});
+			
+			$.each(data.events, function(key, value){
+				
+				
+				// auslesen der JSON Objekte in Variablen
+				var id = value.eid;
+				var title = value.title;
+				var desc = value.description;
+				var date = value.date;
+				// tabellenzeile hinzufügen
+				$("#datatable").append(
+					"<tr> <td> " + id + "</td> <td> " + title + "</td> <td> " + desc + "</td> <td> " + date + "</td>"
+				);
+			});
+		}
+		else{
+			alert(data.msg);
+		}
 	});
 }
 
@@ -51,16 +58,22 @@ function list_tasks_of_event(){
     },
 	function(data) {
 		$("#datatable2").html("");
-		$("#datatable2").append("<tr><th>ID</th><th>Titel</th><th>Umfang</th></tr>");
-		$.each(data.events, function(key, value){
-			//JSON Objekt in variable
-			var id = value.tid;
-			var titel = value.titel;
-			var volume = value.volume;
-			$("#datatable2").append(
-				"<tr><td> " + id + "</td><td>"+ titel + "</td><td>" + volume +"</td></tr>"
-			);
-		});
+		if(data.error == "false"){
+			
+			$("#datatable2").append("<tr><th>ID</th><th>Titel</th><th>Umfang</th></tr>");
+			$.each(data.events, function(key, value){
+				//JSON Objekt in variable
+				var id = value.tid;
+				var titel = value.titel;
+				var volume = value.volume;
+				$("#datatable2").append(
+					"<tr><td> " + id + "</td><td>"+ titel + "</td><td>" + volume +"</td></tr>"
+				);
+			});
+		}
+		else{
+			alert(data.msg);
+		}
 	});
 }
 
