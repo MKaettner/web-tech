@@ -113,7 +113,8 @@ case "join":
 				WHERE
 					p.uid = {$uid} AND
 					p.eid = {$eid}");
-			if(isset($result->fetch_assoc()['pid'])) {
+			$_pid = $result->fetch_assoc();
+			if(isset($_pid['pid'])) {
 				$ret_statement['msg'] = "Error: You already joined the event!";
 				$ret_statement['error'] = true;
 			}

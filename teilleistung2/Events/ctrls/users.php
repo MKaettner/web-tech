@@ -9,7 +9,7 @@ $operation = isset($_GET['operation']) ?  $db->real_escape_string($_GET['operati
 $name = isset($_GET['name']) ? $db->real_escape_string($_GET['name']) : '';
 $password = isset($_GET['password']) ? $db->real_escape_string($_GET['password']) : '';
 
-$ret_statement = array('error' => 'false', 'msg' => '');
+$ret_statement = array('error' => false, 'msg' => '');
 switch($operation) {
 
 case "register":

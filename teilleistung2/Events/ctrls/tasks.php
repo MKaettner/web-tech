@@ -12,7 +12,7 @@ $volume = isset($_GET['volume']) ?  $db->real_escape_string($_GET['volume']) : '
 $eid = isset($_GET['eid']) ?  $db->real_escape_string($_GET['eid']) : '';
 $tid = isset($_GET['tid']) ?  $db->real_escape_string($_GET['tid']) : '';
 
-$ret_statement = array('error' => 'false', 'msg' => '');
+$ret_statement = array('error' => false, 'msg' => '');
 
 if($uid != -1) {
 	switch($operation) {
@@ -73,7 +73,7 @@ case "assign":
 					    WHERE tid = {$tid}
 					) a
 					ON t.tid = a.tid");
-				$freeSlots = $result->fetch_assoc()['freeSlots'];
+				$freeSlots = $result->fetch_assoc();['freeSlots'];
 				if($freeSlots > 0) {
 					if (!$db->query("INSERT INTO assignments (uid, tid) VALUES ('$uid', '$tid')")) {
 						$ret_statement['msg'] = "Error: " . $db->error;
