@@ -1,47 +1,39 @@
-function list_events(){
+function list_events() {
 	$.getJSON('ctrls/events.php', {
-        operation: 'list_events'
-    },
-	function(data) {
-	//leert die Tabelle
+		operation : 'list_events'
+	}, function(data) {
+		//leert die Tabelle
 		$("#datatable").html("");
-		if(data.error == "false"){
+		if (data.error == "false") {
 			//fuegt den tableheader ein
-			$("#datatable").append(
-					"<tr> <th>Event ID</th> <th>Titel</th> <th>Beschreibung</th> <th>Datum</th> </tr>"
-			);
-			
-			$.each(data.events, function(key, value){
-				
-				
+			$("#datatable").append("<tr> <th>Event ID</th> <th>Titel</th> <th>Beschreibung</th> <th>Datum</th> </tr>");
+
+			$.each(data.events, function(key, value) {
+
 				// auslesen der JSON Objekte in Variablen
 				var id = value.eid;
 				var title = value.title;
 				var desc = value.description;
 				var date = value.date;
 				// tabellenzeile hinzufügen
-				$("#datatable").append(
-					"<tr> <td> " + id + "</td> <td> " + title + "</td> <td> " + desc + "</td> <td> " + date + "</td>"
-				);
+				$("#datatable").append("<tr> <td> " + id + "</td> <td> " + title + "</td> <td> " + desc + "</td> <td> " + date + "</td>");
 			});
-		}
-		else{
+		} else {
 			alert(data.msg);
 		}
 	});
 }
 
-function list_users_of_event(){
-	
+function list_users_of_event() {
+
 	var id = document.getElementById("eventID").value
 	$.getJSON('ctrls/events.php', {
-        operation: 'list_users_of_event',
-        eid: id
-    },
-	function(data) {
+		operation : 'list_users_of_event',
+		eid : id
+	}, function(data) {
 		$("#datatable2").html("");
 		$("#datatable2").append("<tr><th>Name</th></tr>");
-		$.each(data.events, function(key, value){
+		$.each(data.events, function(key, value) {
 			//JSON Objekt in variable
 			var name = value.name;
 			$("#datatable2").append("<tr><td> " + name + "</td></tr>");
@@ -49,58 +41,52 @@ function list_users_of_event(){
 	});
 }
 
-function list_tasks_of_event(){
-	
+function list_tasks_of_event() {
+
 	var id = document.getElementById("eventID").value
 	$.getJSON('ctrls/events.php', {
-        operation: 'list_tasks_of_event',
-        eid: id
-    },
-	function(data) {
+		operation : 'list_tasks_of_event',
+		eid : id
+	}, function(data) {
 		$("#datatable2").html("");
-		if(data.error == "false"){
-			
+		if (data.error == "false") {
+
 			$("#datatable2").append("<tr><th>ID</th><th>Titel</th><th>Umfang</th></tr>");
-			$.each(data.events, function(key, value){
+			$.each(data.events, function(key, value) {
 				//JSON Objekt in variable
 				var id = value.tid;
 				var titel = value.titel;
 				var volume = value.volume;
-				$("#datatable2").append(
-					"<tr><td> " + id + "</td><td>"+ titel + "</td><td>" + volume +"</td></tr>"
-				);
+				$("#datatable2").append("<tr><td> " + id + "</td><td>" + titel + "</td><td>" + volume + "</td></tr>");
 			});
-		}
-		else{
+		} else {
 			alert(data.msg);
 		}
 	});
 }
 
-function create(){
-	
-	var etitle = document.getElementById("title").value; 
+function create() {
+
+	var etitle = document.getElementById("title").value;
 	var edesc = document.getElementById("desc").value;
 	var edate = document.getElementById("date").value;
-	
+
 	$.getJSON('ctrls/events.php', {
-        operation: 'create',
-        title: etitle,
-        description: edesc,
-        date: edate
-    },
-	function(data) {
+		operation : 'create',
+		title : etitle,
+		description : edesc,
+		date : edate
+	}, function(data) {
 		alert(data.msg);
 	});
 }
 
-function join(){
+function join() {
 	var id = document.getElementById("eventID").value;
 	$.getJSON('ctrls/events.php', {
-        operation: 'join',
-        eid: id
-    },
-	function(data) {
+		operation : 'join',
+		eid : id
+	}, function(data) {
 		alert(data.msg);
 	});
 }
