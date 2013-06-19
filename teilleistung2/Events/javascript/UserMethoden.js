@@ -25,7 +25,7 @@ function login(){
         password: userpassword		
 	},
 	function(data) {
-		if(data.error=="false"){
+		if(data.error==false){
 			alert("Login successfull!");
 			window.location.href="user.html";
 		}
