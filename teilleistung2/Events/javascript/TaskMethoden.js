@@ -3,7 +3,7 @@ function list_users_of_task() {
 	var id = document.getElementById("taskID").value
 	$.getJSON('ctrls/tasks.php', {
 		operation : 'list_users_of_task',
-		eid : id
+		tid : id
 	}, function(data) {
 		$("#datatable2").html("");
 		$("#datatable2").append("<tr><th>Name</th></tr>");
