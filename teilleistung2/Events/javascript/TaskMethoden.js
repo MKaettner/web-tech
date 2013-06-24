@@ -1,6 +1,7 @@
 function list_users_of_task() {
 
-	var id = document.getElementById("taskID").value
+	var id = document.getElementById("taskID").value;
+	
 	$.getJSON('ctrls/tasks.php', {
 		operation : 'list_users_of_task',
 		tid : id
@@ -17,20 +18,25 @@ function list_users_of_task() {
 
 function create() {
 
-	var etitle = document.getElementById("title").value;
-	var edesc = document.getElementById("desc").value;
-	var edate = document.getElementById("date").value;
+	var ttitle = document.getElementById("title").value;
+	var tvol = document.getElementById("vol").value;
 
 	$.getJSON('ctrls/events.php', {
 		operation : 'create',
-		title : etitle,
-		description : edesc,
-		date : edate
+		title : ttitle,
+		volume : tvol,
+		eid: id
 	}, function(data) {
 		alert(data.msg);
 	});
 }
 
 function assign() {
-	
+	var id = document.getElementById("taskID").value;
+	$.getJSON('ctrls/tasks.php', {
+		operation : 'assign',
+		tid : id
+	}, function(data) {
+		alert(data.msg);
+	});
 }

@@ -19,7 +19,18 @@
 		<div class="content">
 			<p>
 				<h2>Task</h2>
-				Hier können Sie sämtliche Aktivitäten die Tasks betreffed durchführen. <br>
+				Hier können Sie sämtliche Aktivitäten die Tasks betreffed durchführen. <br /><br />
+				 Um sich alle Benutzer und ihre übernommenen Aufgaben anzusehen klicken Sie hier.<br>
+				<button id="listalltasks" onclick="list_users_of_task();">Tasks auflisten</button><br />
+				<table id="datatable"></table>
+				<br>
+				<button onclick="assign();">Aufgabe übernehmen</button><br />
+				Um eine neue Aufgabe anzulegen geben Sie bitte die EventID sowie einen Titel für die Aufgabe sowie die Anzahl der maximal zuteilbaren Personen ein.<br />
+				Aufgabe für Event: <input value="EventID" id="eventID"/><br />
+				Name der Aufgabe: <input value="Name" id="ttitle" /><br />
+				Anzahl der zugeordneten Benutzer: <input value="Anzahl" id="tvol" /><br />
+				<button onclick="create();">Aufgabe anlegen</button>
+				<table id="datatable2"></table>
 			</p>
 		</div>
 	</body>
