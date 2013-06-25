@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<header>
-			<h1>Veranstaltungsverwaltung</h1>
+			<h1>VERANSTALTUNGSVERWALTUNG</h1>
 		</header>
 		<nav class="navleft">
 			<ul class="navigation">
@@ -23,20 +23,18 @@
 				Hier können Sie sämtliche Aktivitäten das Event betreffed durchführen. <br>
 				<button id="listallevents" onclick="list_events();">Events auflisten</button>
 				<table id="datatable"></table>
-				<br>
-				Um die User oder Tasks eines Events aufzulisten, geben Sie bitte die ID des entsprechenden Events an. Über die ID können Sie außerdem dem Event beitreten<br>
+				<p class="portlet">Um die User oder Tasks eines Events aufzulisten, geben Sie bitte die ID des entsprechenden Events an. Über die ID können Sie außerdem dem Event beitreten<br />
 				<button onclick="join();">Veranstaltung beitreten</button>
 				<button onclick="list_users_of_event();">User auflisten</button>
 				<button onclick="list_tasks_of_event();">Tasks auflisten</button>
 				<input value="EventID" id="eventID"/>
-				<table id="datatable2"></table>
-				<br>
-				Um ein neues Event anzulegen, geben Sie bitte Titel, Beschreibung und Datum des Events an.<br>
+				<table id="datatable2"></table></p>
+				<p class="portlet">Um ein neues Event anzulegen, geben Sie bitte Titel, Beschreibung und Datum des Events an.<br>
 				<br>
 				Titel: <input value="Titel1" id="title" /><br>
 				Beschreibung: <input value="Das ist ein Event" id="desc" /><br>
 				Datum: <input type="date" value="YYYY-MM-DD" id="date" /><br>
-				<button onclick="create();">Event anlegen</button>
+				<button onclick="create();">Event anlegen</button></p>
 			</p>
 		</div>
 	</body>

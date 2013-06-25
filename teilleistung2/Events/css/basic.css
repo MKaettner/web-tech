@@ -21,8 +21,13 @@ header {
 }
 
 header h1 {
+	text-align:center;
+	letter-spacing:2.5px;
+	color:#333333;
+	font-family:Arial;
 	padding: 30px;
 	min-width: 1000px;
+	
 }
 
 h2 {
@@ -61,7 +66,7 @@ div.content {
 	background: #F5F5F5;
 	margin-left: 155px;
 	min-height: 600px;
-	min-width: 1000px;
+	min-width: 800px;
 	padding: 10px;
 	padding-left: 40px;
 	padding-top: 30px;
@@ -69,6 +74,19 @@ div.content {
 	border-left: 1px;
 	border-left-color: #A0A0A0;
 	border-left-style: dotted;
+}
+
+div.content.prelogin {
+	margin-left: 15px;
+}
+
+p.portlet {
+	
+	border:1px;
+	border-style:groove;
+	border-color:#777788;
+	padding:3px;
+	margin:10px;
 }
 
 button{
@@ -86,7 +104,7 @@ input{
 
 #datatable td, #datatable th{
 	font-size: 20px;
-	padding: 3px;
+	padding: 0px;
 	padding-left: 20px;
 	padding right: 20px;
 }
