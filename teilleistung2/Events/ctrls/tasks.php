@@ -12,7 +12,7 @@ $volume = isset($_GET['volume']) ?  $db->real_escape_string($_GET['volume']) : '
 $eid = isset($_GET['eid']) ?  $db->real_escape_string($_GET['eid']) : '';
 $tid = isset($_GET['tid']) ?  $db->real_escape_string($_GET['tid']) : '';
 
-$ret_statement = array('error' => false, 'msg' => '');
+$ret_statement = array('error' => 'false', 'msg' => '');
 
 if($uid != -1) {
 	switch($operation) {
@@ -27,7 +27,8 @@ case "create":
 				WHERE
 					e.uid = {$uid} AND
 					e.eid = {$eid}");
-			if(isset($result->fetch_assoc()['eid'])) {
+			$_eid = $result->fetch_assoc();
+			if(isset($_eid['eid'])) {
 				if (!$db->query("INSERT INTO tasks (eid, title, volume) VALUES ('$eid', '$title', '$volume')")) {
 					$ret_statement['msg'] = "Error: " . $db->error;
 					$ret_statement['error'] = true;
@@ -59,7 +60,8 @@ case "assign":
 					t.tid = {$tid} AND
 					p.eid = t.eid AND
 					p.uid = {$uid}");
-			if(isset($result->fetch_assoc()['pid'])) {
+			$_pid = $result->fetch_assoc();
+			if(isset($_pid['pid'])) {
 				$result = $db->query("
 					SELECT volume - COALESCE(assignments, 0) AS freeSlots
 					FROM (
@@ -73,7 +75,8 @@ case "assign":
 					    WHERE tid = {$tid}
 					) a
 					ON t.tid = a.tid");
-				$freeSlots = $result->fetch_assoc();['freeSlots'];
+				$_freeSlots = $result->fetch_assoc();
+				$freeSlots = $_freeSlots['freeSlots'];
 				if($freeSlots > 0) {
 					if (!$db->query("INSERT INTO assignments (uid, tid) VALUES ('$uid', '$tid')")) {
 						$ret_statement['msg'] = "Error: " . $db->error;

@@ -89,12 +89,12 @@ case "create":
 				$ret_statement['error'] = true;
 			}
 			else {
+				$ret_statement['eid'] = $db->insert_id;
 				if (!$db->query("INSERT INTO participations (uid, eid) VALUES ('$uid', '$db->insert_id')")) {
 					$ret_statement['msg'] = "Error: " . $db->error;
 					$ret_statement['error'] = true;
 				}
 				$ret_statement['msg'] = "Created new event '{$title}' successfully!";
-				$ret_statement['eid'] = $db->insert_id;
 			}
 		}
 		else {

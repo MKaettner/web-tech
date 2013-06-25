@@ -18,7 +18,7 @@ $create_table_events = <<<SQL
 	CREATE TABLE IF NOT EXISTS events (
 	  eid int(10) NOT NULL AUTO_INCREMENT,
 	  title varchar(64) NOT NULL,
-	  description varchar(256) NOT NULL,
+	  description varchar(256) CHARACTER SET utf32 NOT NULL,
 	  uid int(10) NOT NULL,
 	  date date NOT NULL,
 	  PRIMARY KEY (eid),
