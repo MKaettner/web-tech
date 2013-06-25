@@ -4,6 +4,7 @@
 		<link rel="stylesheet" type="text/css" href="css/basic.css" />
 		<script type="text/javascript" src="javascript/jquery-1.10.1.min.js"></script>
 		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<script type="text/javascript" src="javascript/TaskMethoden.js"></script>
 	</head>
 	<body>
 		<header>
@@ -20,17 +21,20 @@
 			<p>
 				<h2>Task</h2>
 				Hier können Sie sämtliche Aktivitäten die Tasks betreffed durchführen. <br /><br />
-				 Um sich alle Benutzer und ihre übernommenen Aufgaben anzusehen klicken Sie hier.<br>
+				Um sich alle Benutzer und ihre übernommenen Aufgaben anzusehen klicken Sie hier.<br>
+				ID des Tasks dessen User angezeigt werden sollen: <input id="taskID1" value="taskID"/>
 				<button id="listalltasks" onclick="list_users_of_task();">Tasks auflisten</button><br />
 				<table id="datatable"></table>
 				<br>
 				<button onclick="assign();">Aufgabe übernehmen</button><br />
+				ID des zu übernehmenden Tasks: <input id="taskID" value="taskID"/> <br>
+				<br>
+				
 				Um eine neue Aufgabe anzulegen geben Sie bitte die EventID sowie einen Titel für die Aufgabe sowie die Anzahl der maximal zuteilbaren Personen ein.<br />
-				Aufgabe für Event: <input value="EventID" id="eventID"/><br />
+				Aufgabe für Event mit ID: <input value="EventID" id="eventID"/><br />
 				Name der Aufgabe: <input value="Name" id="ttitle" /><br />
 				Anzahl der zugeordneten Benutzer: <input value="Anzahl" id="tvol" /><br />
 				<button onclick="create();">Aufgabe anlegen</button>
-				<table id="datatable2"></table>
 			</p>
 		</div>
 	</body>

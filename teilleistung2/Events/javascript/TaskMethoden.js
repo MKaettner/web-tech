@@ -1,27 +1,28 @@
 function list_users_of_task() {
 
-	var id = document.getElementById("taskID").value;
+	var id = document.getElementById("taskID1").value;
 	
 	$.getJSON('ctrls/tasks.php', {
 		operation : 'list_users_of_task',
 		tid : id
 	}, function(data) {
-		$("#datatable2").html("");
-		$("#datatable2").append("<tr><th>Name</th></tr>");
-		$.each(data.tasks, function(key, value) {
+		$("#datatable").html("");
+		$("#datatable").append("<tr><th>Name</th></tr>");
+		$.each(data.users, function(key, value) {
 			//JSON Objekt in variable
 			var name = value.name;
-			$("#datatable2").append("<tr><td> " + name + "</td></tr>");
+			$("#datatable").append("<tr><td> " + name + "</td></tr>");
 		});
 	});
 }
 
 function create() {
 
-	var ttitle = document.getElementById("title").value;
-	var tvol = document.getElementById("vol").value;
+	var ttitle = document.getElementById("ttitle").value;
+	var tvol = document.getElementById("tvol").value;
+	var id = document.getElementById("eventID").value;
 
-	$.getJSON('ctrls/events.php', {
+	$.getJSON('ctrls/tasks.php', {
 		operation : 'create',
 		title : ttitle,
 		volume : tvol,
