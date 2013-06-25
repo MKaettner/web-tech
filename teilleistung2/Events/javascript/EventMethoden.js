@@ -27,6 +27,7 @@ function list_events() {
 function list_users_of_event() {
 
 	var id = document.getElementById("eventID").value
+	//if() wenn keine zahl übergeben??!!
 	$.getJSON('ctrls/events.php', {
 		operation : 'list_users_of_event',
 		eid : id
@@ -34,7 +35,7 @@ function list_users_of_event() {
 		$("#datatable2").html("");
 		if (data.error == "false") {
 			$("#datatable2").append("<tr><th>Name</th></tr>");
-			$.each(data.events, function(key, value) {
+			$.each(data.users, function(key, value) {
 				//JSON Objekt in variable
 				var name = value.name;
 				$("#datatable2").append("<tr><td> " + name + "</td></tr>");
@@ -57,7 +58,7 @@ function list_tasks_of_event() {
 		if (data.error == "false") {
 
 			$("#datatable2").append("<tr><th>ID</th><th>Titel</th><th>Umfang</th></tr>");
-			$.each(data.events, function(key, value) {
+			$.each(data.tasks, function(key, value) {
 				//JSON Objekt in variable
 				var id = value.tid;
 				var titel = value.titel;
