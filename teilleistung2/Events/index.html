@@ -10,9 +10,12 @@
 		<header><h1>Veranstaltungsverwaltung</h1></header>
 		<div>
 				Geben Sie hier ihren Namen sowie ihr Passwort an, um sich einzuloggen.<br>
-				Name: <input type="text" name="name" id="username" value="User"><br>
-				Password: <input type="password" name="pwd" id="userpwd" value="password"><br>
-				<button onclick="login();">login</button><br>
+				<table>
+				<tr><td>Name:</td><td><input type="text" name="name" id="username" value="User"></td><br></tr>
+				<tr><td>Password:</td><td><input type="password" name="pwd" id="userpwd" value="password"></td><br></tr>
+				<tr><td></td><td><button onclick="login();">login</button></td><br></tr>
+				</table>
+				
 				<br>
 				Noch nicht registriert? <a href="register.html">Registrieren</a>
 		</div>
