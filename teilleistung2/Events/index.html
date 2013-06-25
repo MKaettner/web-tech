@@ -8,16 +8,17 @@
 	</head>
 	<body>
 		<header><h1>VERANSTALTUNGSVERWALTUNG</h1></header>
-		<div class="content.prelogin">
-				Geben Sie hier ihren Namen sowie ihr Passwort an, um sich einzuloggen.<br>
-				<table>
-				<tr><td>Name:</td><td><input type="text" name="name" id="username" value="User"></td><br></tr>
-				<tr><td>Password:</td><td><input type="password" name="pwd" id="userpwd" value="password"></td><br></tr>
-				<tr><td></td><td><button onclick="login();">login</button></td><br></tr>
-				</table>
-				
-				<br>
-				Noch nicht registriert? <a href="register.html">Registrieren</a>
+		<div class="prelogin">
+			Geben Sie hier Ihren Namen sowie Ihr Passwort an, um sich einzuloggen.<br>
+			<!-- <form name="input"> -->
+			<table>
+			<tr><td>Name:</td><td><input type="text" name="name" id="username" value="User"></td><br></tr>
+			<tr><td>Passwort:</td><td><input type="password" name="pwd" id="userpwd" value="password"></td><br></tr>
+			<tr><td> </td><td><input type="submit" onclick="login();" value="Anmelden"></td><br></tr>
+			</table>
+			<!-- </form> -->
+			<br>
+			Noch nicht registriert? <a href="register.html">Registrieren</a>
 		</div>
 	</body>
 </html>

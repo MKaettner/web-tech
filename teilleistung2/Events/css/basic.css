@@ -76,8 +76,14 @@ div.content {
 	border-left-style: dotted;
 }
 
-div.content.prelogin {
-	margin-left:15px;
+div.prelogin {
+	background: #F5F5F5;
+	min-height: 600px;
+	min-width: 800px;
+	padding: 10px;
+	padding-left: 40px;
+	padding-top: 30px;
+	padding-bottom: 100px;
 }
 
 p.portlet {

@@ -8,16 +8,18 @@
 	</head>
 	<body>
 		<header><h1>VERANSTALTUNGSVERWALTUNG</h1></header>
-		<div class="content.prelogin">
+		<div class="prelogin">
 			Geben Sie hier einen Namen sowie ein Passwort an, um sich zu registrieren.<br>
+			<!-- <form name="reg"> -->
+			<table>
 			<tr><td>Name:</td><td><input type="text" name="name" id="username" value="User"></td><br></tr>
-			<tr><td>Password:</td><td><input type="password" name="pwd" id="userpwd" value="password"></td><br></tr>
-			<tr><td></td><td><button onclick="register();">Jetzt registrieren</button></td><br></tr>
+			<tr><td>Passwort:</td><td><input type="password" name="pwd" id="userpwd" value="password"></td><br></tr>
+			<tr><td> </td><td><input type="submit" onclick="register();" value="Jetzt registrieren"></td><br></tr>
+			</table>
+			<!-- </form> -->
 			<br>
 			<a href="index.html">Zurück zum Login</a> <br>				
-			<br>
-			<p id="message"></p>
+			<p id="message"></p> <!-- Soll das stehen bleiben? Wird es gebraucht? Statt dessen alert? -->
 		</div>
-		
 	</body>
 </html>
