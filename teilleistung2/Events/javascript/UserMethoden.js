@@ -25,12 +25,12 @@ function login(){
         password: userpassword		
 	},
 	function(data) {
-		if(data.error==false){
-			alert("Login successfull!");
-			window.location.href="user.html";
+		if(data.error=="true"){
+			alert("Username or Password invalid!");
 		}
 		else{
-			alert("Username or Password invalid!");
+			alert("Login successfull!");
+			window.location.href="user.html";
 		}
 	});
 }

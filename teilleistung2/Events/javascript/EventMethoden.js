@@ -4,7 +4,7 @@ function list_events() {
 	}, function(data) {
 		//leert die Tabelle
 		$("#datatable").html("");
-		if (data.error == false) {
+		if (data.error == "false") {
 			//fuegt den tableheader ein
 			$("#datatable").append("<tr> <th>Event ID</th> <th>Titel</th> <th>Beschreibung</th> <th>Datum</th> </tr>");
 
@@ -32,12 +32,17 @@ function list_users_of_event() {
 		eid : id
 	}, function(data) {
 		$("#datatable2").html("");
-		$("#datatable2").append("<tr><th>Name</th></tr>");
-		$.each(data.events, function(key, value) {
-			//JSON Objekt in variable
-			var name = value.name;
-			$("#datatable2").append("<tr><td> " + name + "</td></tr>");
-		});
+		if (data.error == "false") {
+			$("#datatable2").append("<tr><th>Name</th></tr>");
+			$.each(data.events, function(key, value) {
+				//JSON Objekt in variable
+				var name = value.name;
+				$("#datatable2").append("<tr><td> " + name + "</td></tr>");
+			});
+		}
+		else{
+			alert(data.msg);
+		}
 	});
 }
 
@@ -49,7 +54,7 @@ function list_tasks_of_event() {
 		eid : id
 	}, function(data) {
 		$("#datatable2").html("");
-		if (data.error == false) {
+		if (data.error == "false") {
 
 			$("#datatable2").append("<tr><th>ID</th><th>Titel</th><th>Umfang</th></tr>");
 			$.each(data.events, function(key, value) {
