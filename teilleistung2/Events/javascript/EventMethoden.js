@@ -61,7 +61,7 @@ function list_tasks_of_event() {
 			$.each(data.tasks, function(key, value) {
 				//JSON Objekt in variable
 				var id = value.tid;
-				var titel = value.titel;
+				var titel = value.title;
 				var volume = value.volume;
 				$("#datatable2").append("<tr><td> " + id + "</td><td>" + titel + "</td><td>" + volume + "</td></tr>");
 			});
