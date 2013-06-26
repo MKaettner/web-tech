@@ -57,7 +57,7 @@ function list_tasks_of_event() {
 		$("#datatable2").html("");
 		if (data.error == "false") {
 
-			$("#datatable2").append("<tr><th>ID</th><th>Titel</th><th>Umfang</th></tr>");
+			$("#datatable2").append("<tr><th>ID</th><th>Titel</th><th>Max. Teilnehmer</th></tr>");
 			$.each(data.tasks, function(key, value) {
 				//JSON Objekt in variable
 				var id = value.tid;

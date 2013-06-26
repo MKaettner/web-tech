@@ -87,10 +87,10 @@ function list_tasks_of_user(){
 	},
 	function(data) {
 		//leert die Tabelle
-		$("#datatable").html("");
+		$("#datatable2").html("");
 		if(data.error=="false"){
 			//fuegt den tableheader ein
-			$("#datatable").append(
+			$("#datatable2").append(
 					"<tr> <th>Event ID</th> <th>Titel</th> <th>Aufgabe</th> <th>Stichtag</th> </tr>"
 			);
 			$.each(data.tasks, function(key, value){
@@ -100,7 +100,7 @@ function list_tasks_of_user(){
 				var task = value.task;
 				var due = value.due;
 				// tabellenzeile einfügen
-				$("#datatable").append(
+				$("#datatable2").append(
 					"<tr> <td> " + id + "</td> <td> " + event + "</td> <td> " + task + "</td> <td> " + due + "</td>"
 				);
 			});

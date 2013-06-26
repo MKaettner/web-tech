@@ -26,24 +26,24 @@
 			<p>
 				<h2>Event</h2>
 				Hier können Sie sämtliche Aktivitäten das Event betreffed durchführen. <br>
-				<button id="listallevents" onclick="list_events();">Events auflisten</button>
-				<table id="datatable"></table>
+				<div class="portlet"><button id="listallevents" onclick="list_events();">Events auflisten</button>
+				<table id="datatable"> </table></div>
 				<div class="portlet">Um die User oder Tasks eines Events aufzulisten, geben Sie bitte die ID des entsprechenden Events an. Über die ID können Sie außerdem dem Event beitreten<br />
 				<table>
 				<tr>
+				<td><input value="" id="eventID"/></td>
 				<td><button onclick="join();">Veranstaltung beitreten</button></td>
 				<td><button onclick="list_users_of_event();">User auflisten</button></td>
 				<td><button onclick="list_tasks_of_event();">Tasks auflisten</button></td>
-				<td><input value="" id="eventID"/></td>
 				</tr>
 				</table>
-				<table id="datatable2"></table></div>
+				<table id="datatable2"> </table></div>
 				<div class="portlet">Um ein neues Event anzulegen, geben Sie bitte Titel, Beschreibung und Datum des Events an.<br>
 				<br>
 				<table>
 				<tr><td>Titel:</td><td><input value="" id="title" /></td></tr>
 				<tr><td>Beschreibung:</td><td><input value="" id="desc" /></td></tr>
-				<tr><td>Datum:</td><td><input type="date" value="" id="date" /></td></tr>
+				<tr><td>Datum:</td><td><input type="date" value="JJJJ.MM.TT" onclick="this.select()" onfocus="this.select()" id="date" /></td></tr>
 				<tr><td> </td><td><button onclick="create();">Event anlegen</button></td></tr>
 				</table>
 				</div>
