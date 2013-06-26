@@ -10,10 +10,10 @@ div#wrap {
 	background: #F5F5F5;
 }
 header {
-	height: 200px;
+	height: 100px;
 	border-top-left-radius: 30px;
 	border-top-right-radius: 30px;
-	background-color: #F5F5F5;
+	background-color: #FFFFCC;
 	border-bottom: 2px;
 	border-bottom-color: black;
 	border-bottom-style: solid;
@@ -87,7 +87,7 @@ div.prelogin {
 }
 
 div.portlet {
-	
+	background:#FFFFCC;
 	border:1px;
 	border-style:dotted;
 	border-color:#777788;
@@ -113,5 +113,9 @@ input{
 	padding: 0px;
 	padding-left: 20px;
 	padding right: 20px;
+}
+#logout{
+	float: right;
+	margin-right: 20px;
 }
 
