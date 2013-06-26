@@ -7,6 +7,7 @@
 		<script type="text/javascript" src="javascript/TaskMethoden.js"></script>
 	</head>
 	<body>
+		<div id=wrap>
 		<header>
 			<h1>VERANSTALTUNGSVERWALTUNG</h1>
 		</header>
@@ -21,18 +22,32 @@
 			<p>
 				<h2>Task</h2>
 				Hier können Sie sämtliche Aktivitäten die Tasks betreffed durchführen. <br /><br />
-				<p class="portlet">Um sich alle Benutzer und ihre übernommenen Aufgaben anzusehen klicken Sie hier.<br>
-				ID des Tasks dessen User angezeigt werden sollen: <input id="taskID1" value="taskID"/>
-				<button id="listalltasks" onclick="list_users_of_task();">Tasks auflisten</button><br />
-				<table id="datatable"></table></p>
-				<p class="portlet"><button onclick="assign();">Aufgabe übernehmen</button><br />
-				ID des zu übernehmenden Tasks: <input id="taskID" value="taskID"/></p>
-				<p class="portlet">Um eine neue Aufgabe anzulegen geben Sie bitte die EventID sowie einen Titel für die Aufgabe sowie die Anzahl der maximal zuteilbaren Personen ein.<br />
-				Aufgabe für Event mit ID: <input value="EventID" id="eventID"/><br />
-				Name der Aufgabe: <input value="Name" id="ttitle" /><br />
-				Anzahl der zugeordneten Benutzer: <input value="Anzahl" id="tvol" /><br />
-				<button onclick="create();">Aufgabe anlegen</button></p>
+				<div class="portlet">Um sich alle Benutzer und ihre übernommenen Tasks anzusehen klicken Sie hier.
+				<table>
+				<tr><td>ID des Tasks dessen User angezeigt werden sollen:</td><td><input id="taskID1" value=""/></td></tr>
+				<tr><td> </td><td><button id="listalltasks" onclick="list_users_of_task();">Tasks auflisten</button></td></tr><br />
+				</table>
+				
+				<table id="datatable"></table></div>
+				<div class="portlet">
+					Hier können Sie einen Task angeben den Sie übernehmen möchten.
+					<table>
+				<tr><td>ID der zu übernehmenden Tasks:</td> <td><input id="taskID" value=""/></td></tr>
+				<tr><td> </td><td><button onclick="assign();">Task übernehmen</button></td></tr><br />
+				</table></div>
+				<div class="portlet">Um eine neue Task anzulegen geben Sie bitte die EventID sowie einen Titel für die Task sowie die Anzahl der maximal zuteilbaren Personen ein.<br />
+				<table>
+					<tr><td>Task für Event mit ID:</td><td><input value="" id="eventID"/></td></tr>
+					<tr><td>Name des Tasks:</td><td><input value="" id="ttitle" /></td></tr>
+					<tr><td>Anzahl der zugeordneten Benutzer:</td><td><input value="" id="tvol" /></td></tr>
+					<tr><td> </td><td><button onclick="create();">Task anlegen</button></td></tr>
+				</table>
+				 <br />
+				 <br />
+				 <br />
+				</div>
 			</p>
+		</div>
 		</div>
 	</body>
 </html>

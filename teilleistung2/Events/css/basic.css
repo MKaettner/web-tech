@@ -86,12 +86,12 @@ div.prelogin {
 	padding-bottom: 100px;
 }
 
-p.portlet {
+div.portlet {
 	
 	border:1px;
-	border-style:groove;
+	border-style:dotted;
 	border-color:#777788;
-	padding:3px;
+	padding:5px;
 	margin:10px;
 }
 
@@ -104,7 +104,7 @@ input{
 }
 
 #datatable{
-	border: 1px solid black;
+	border: 1px solid #777788;
 	 
 }
 

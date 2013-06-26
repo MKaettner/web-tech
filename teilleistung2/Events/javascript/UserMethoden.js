@@ -16,14 +16,15 @@ function register(){
 
 function login(){
 	
+	
 	var username = document.getElementById("username").value;
 	var userpassword = document.getElementById("userpwd").value;
 	
 	$.getJSON("ctrls/users.php", {
-		operation: "login",
+        operation: "login",
         name: username,
-        password: userpassword		
-	},
+        password: userpassword
+    },
 	function(data) {
 		if(data.error=="true"){
 			alert("Username or Password invalid!");
@@ -31,8 +32,9 @@ function login(){
 		else{
 			alert("Login successfull!");
 			window.location.href="user.html";
-		}
-	});
+		} 
+	} ); 
+	
 }
 
 function logout(){

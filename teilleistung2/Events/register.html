@@ -10,16 +10,17 @@
 		<header><h1>VERANSTALTUNGSVERWALTUNG</h1></header>
 		<div class="prelogin">
 			Geben Sie hier einen Namen sowie ein Passwort an, um sich zu registrieren.<br>
-			<!-- <form name="reg"> -->
+			<form name="reg" action="#" method="get">
+				<input type="hidden" name="operation" value="register">
 			<table>
-			<tr><td>Name:</td><td><input type="text" name="name" id="username" value="User"></td><br></tr>
-			<tr><td>Passwort:</td><td><input type="password" name="pwd" id="userpwd" value="password"></td><br></tr>
-			<tr><td> </td><td><input type="submit" onclick="register();" value="Jetzt registrieren"></td><br></tr>
+			<tr><td>Name:</td><td><input type="text" name="name" onclick="this.value='';" id="username" onfocus="this.select()" onblur="this.value=!this.value?'Name':this.value;" value="Name"></td><br></tr>
+			<tr><td>Passwort:</td><td><input type="password" name="Passwort" id="userpwd" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'Passwort':this.value;" value="Passwort"></td><br></tr>
+			<tr><td> </td><td><input type="submit" onclick="register();return false;" name="Jetzt registrieren"></td><br></tr>
 			</table>
-			<!-- </form> -->
+			</form>
 			<br>
 			<a href="index.html">Zurück zum Login</a> <br>				
-			<p id="message"></p> <!-- Soll das stehen bleiben? Wird es gebraucht? Statt dessen alert? -->
+			<p id="message"></p> <!-- Statt dessen alert? -->
 		</div>
 	</body>
 </html>

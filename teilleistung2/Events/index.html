@@ -10,15 +10,17 @@
 		<header><h1>VERANSTALTUNGSVERWALTUNG</h1></header>
 		<div class="prelogin">
 			Geben Sie hier Ihren Namen sowie Ihr Passwort an, um sich einzuloggen.<br>
-			<!-- <form name="input"> -->
+			<form name="log" action="#" method="get">
+				<input type="hidden" name="operation" value="login">
 			<table>
-			<tr><td>Name:</td><td><input type="text" name="name" id="username" value="User"></td><br></tr>
-			<tr><td>Passwort:</td><td><input type="password" name="pwd" id="userpwd" value="password"></td><br></tr>
-			<tr><td> </td><td><input type="submit" onclick="login();" value="Anmelden"></td><br></tr>
+			<tr><td>Name:</td><td><input type="text" name="name" onclick="this.value='';" id="username" onfocus="this.select()" onblur="this.value=!this.value?'Name':this.value;" value="Name"></td><br></tr>
+			<tr><td>Passwort:</td><td><input type="password" name="Passwort" id="userpwd" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'Passwort':this.value;" value="Passwort"></td><br></tr>
+			<tr><td> </td><td><input type="submit" onclick="login();return false;" name="Anmelden"></td><br></tr>
 			</table>
-			<!-- </form> -->
+			</form>
 			<br>
 			Noch nicht registriert? <a href="register.html">Registrieren</a>
+			<p id="message"></p>
 		</div>
 	</body>
 </html>

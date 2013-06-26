@@ -7,6 +7,7 @@
 		<script type="text/javascript" src="javascript/EventMethoden.js"></script>
 	</head>
 	<body>
+		<div id=wrap>
 		<header>
 			<h1>VERANSTALTUNGSVERWALTUNG</h1>
 		</header>
@@ -23,19 +24,27 @@
 				Hier können Sie sämtliche Aktivitäten das Event betreffed durchführen. <br>
 				<button id="listallevents" onclick="list_events();">Events auflisten</button>
 				<table id="datatable"></table>
-				<p class="portlet">Um die User oder Tasks eines Events aufzulisten, geben Sie bitte die ID des entsprechenden Events an. Über die ID können Sie außerdem dem Event beitreten<br />
-				<button onclick="join();">Veranstaltung beitreten</button>
-				<button onclick="list_users_of_event();">User auflisten</button>
-				<button onclick="list_tasks_of_event();">Tasks auflisten</button>
-				<input value="EventID" id="eventID"/>
-				<table id="datatable2"></table></p>
-				<p class="portlet">Um ein neues Event anzulegen, geben Sie bitte Titel, Beschreibung und Datum des Events an.<br>
+				<div class="portlet">Um die User oder Tasks eines Events aufzulisten, geben Sie bitte die ID des entsprechenden Events an. Über die ID können Sie außerdem dem Event beitreten<br />
+				<table>
+				<tr>
+				<td><button onclick="join();">Veranstaltung beitreten</button></td>
+				<td><button onclick="list_users_of_event();">User auflisten</button></td>
+				<td><button onclick="list_tasks_of_event();">Tasks auflisten</button></td>
+				<td><input value="" id="eventID"/></td>
+				</tr>
+				</table>
+				<table id="datatable2"></table></div>
+				<div class="portlet">Um ein neues Event anzulegen, geben Sie bitte Titel, Beschreibung und Datum des Events an.<br>
 				<br>
-				Titel: <input value="Titel1" id="title" /><br>
-				Beschreibung: <input value="Das ist ein Event" id="desc" /><br>
-				Datum: <input type="date" value="YYYY-MM-DD" id="date" /><br>
-				<button onclick="create();">Event anlegen</button></p>
+				<table>
+				<tr><td>Titel:</td><td><input value="" id="title" /></td></tr>
+				<tr><td>Beschreibung:</td><td><input value="" id="desc" /></td></tr>
+				<tr><td>Datum:</td><td><input type="date" value="" id="date" /></td></tr>
+				<tr><td> </td><td><button onclick="create();">Event anlegen</button></td></tr>
+				</table>
+				</div>
 			</p>
+		</div>
 		</div>
 	</body>
 </html>
