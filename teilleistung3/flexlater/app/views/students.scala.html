@@ -1,0 +1,25 @@
+@(students: List[Student], studentForm: Form[Student])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Todo list") {
+<h1>@students.size() student(s)</h1>
+
+<ul>
+	@for(student <- students) {
+	<li>
+		@student.name
+		@form(routes.StudentCtrl.deleteStudent(id)) {
+		<input type="submit" value="Delete">
+		}
+	</li>
+	}
+</ul>
+
+<h2>Add a new student</h2>
+@form(routes.StudentCtrl.newStudent()) {
+@inputText(studentForm("name"))
+<input type="submit" value="Create">
+}
+}
