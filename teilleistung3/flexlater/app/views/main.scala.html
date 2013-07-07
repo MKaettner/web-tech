@@ -15,8 +15,17 @@
     <body>
         <div id="page_container">
         	<ul class="nav nav-tabs">
-        		<li clas="@("active".when(request.path.contains("students")))">
-        			<a href="@routes.StudentCtrl.students">Students</a>
+        		<li class="@("active".when(request.path.contains("students")))">
+        			<a href="@routes.StudentCtrl.students">Studenten</a>
+        		</li>
+        		<li class="@("active".when(request.path.contains("exams")))">
+        			<a href="@routes.ExamCtrl.exam">Pruefungen</a>
+        		</li>
+        		<li class="@("active".when(request.path.contains("docents")))">
+        			<a href="@routes.DocentCtrl.docent">Dozenten</a>
+        		</li>
+        		<li class="@("active".when(request.path.contains("enrollments")))">
+        			<a href="@routes.EnrollmentCtrl.enrollments">Prüfungsanmeldungen</a>
         		</li>
         	</ul>
         	<div id="content_container">

@@ -10,5 +10,21 @@ GET		/students					controllers.StudentCtrl.students()
 POST	/students					controllers.StudentCtrl.newStudent()
 POST	/students/:id/delete		controllers.StudentCtrl.deleteStudent(id: Long)		
 
+# Exams
+GET		/exams						controllers.ExamCtrl.exams()
+POST	/exams						controllers.ExamCtrl.newExam()
+POST	/exams/:id/delete			controllers.ExamCtrl.deleteExam(id: Long)
+
+
+# Docents
+GET		/docents					controllers.DocentCtrl.docents()
+POST	/docents					controllers.DocentCtrl.newDocent()
+POST	/docents/:id/delete			controllers.DocentCtrl.deleteDocent(id: Long)
+
+# Enrollments
+GET		/enrollments				controllers.EnrollmentCtrl.enrollments()
+POST	/enrollments				controllers.EnrollmentCtrl.newEnrollment()
+POST	/enrollments/:id/delete		controllers.EnrollmentCtrl.deleteEnrollment(id: Long)
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

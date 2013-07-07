@@ -10,27 +10,29 @@ import play.db.ebean.Model;
 @Entity
 public class Docent extends Model {
 
-	// Attribute
-	@Id
-	public int docentId;
-	public String name, firstName, chair;
-	
+		// Attribute
+		@Id
+		public Long docentId;
+		public String name, firstName, chair;
+		
 
-	// Methoden
+		// Methoden
 
-	public static Docent find(int docentId) {
-		return null;
+		public static Finder<Long, Docent> find = new Finder (Long.class, Docent.class);
+
+		public static List<Docent> all() {
+			return find.all();
+		}
+
+		public static void create(Docent docent) {
+			docent.save();
+		}
+
+		public static void delete(Long docentId) {
+			find.ref(docentId).delete();
+		}
+
+		
 	}
-
-	public static List<Docent> all() {
-		return null;
-	}
-
-	public static void create(Docent docent) {
-	}
-
-	public static void delete(int docentId) {
-	}
-
 	
 }
