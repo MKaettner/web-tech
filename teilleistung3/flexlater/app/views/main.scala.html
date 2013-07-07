@@ -19,10 +19,10 @@
         			<a href="@routes.StudentCtrl.students">Studenten</a>
         		</li>
         		<li class="@("active".when(request.path.contains("exams")))">
-        			<a href="@routes.ExamCtrl.exam">Pruefungen</a>
+        			<a href="@routes.ExamCtrl.exams">Pruefungen</a>
         		</li>
         		<li class="@("active".when(request.path.contains("docents")))">
-        			<a href="@routes.DocentCtrl.docent">Dozenten</a>
+        			<a href="@routes.DocentCtrl.docents">Dozenten</a>
         		</li>
         		<li class="@("active".when(request.path.contains("enrollments")))">
         			<a href="@routes.EnrollmentCtrl.enrollments">Prüfungsanmeldungen</a>

@@ -8,7 +8,13 @@ GET     /                           controllers.Application.index()
 # Students
 GET		/students					controllers.StudentCtrl.students()
 POST	/students					controllers.StudentCtrl.newStudent()
-POST	/students/:id/delete		controllers.StudentCtrl.deleteStudent(id: Long)		
+POST	/students/:id/delete		controllers.StudentCtrl.deleteStudent(id: Long)
+
+# Exams
+GET 	/exams					controllers.ExamCtrl.exams()
+POST	/exams					controllers.ExamCtrl.newExam()
+POST	/exams/:id/delete		controllers.ExamCtrl.deleteExam(id: Long)
+		
 
 # Exams
 GET		/exams						controllers.ExamCtrl.exams()
