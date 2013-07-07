@@ -6,18 +6,24 @@
 @main("Todo list") {
 <h1>@students.size() @if(students.size()==1) {Student} else {Studenten}</h1>
 
-<ul>
+<table>
+	<tr>
+	<td>Name</td>
+	<td>Vorname</td>
+	<td>Studienfach</td>
+	<td></td>
+	</tr>
 	@for(student <- students) {
-	<li>
-		Name: @student.name <br>
-		Vorname: @student.firstName <br>
-		Studienfach: @student.major <br>
-		@form(routes.StudentCtrl.deleteStudent(student.studentId)) {
+	<tr>
+		<td>@student.name</td>
+		<td>@student.firstName</td>
+		<td>@student.major</td>
+		<td>@form(routes.StudentCtrl.deleteStudent(student.studentId)) {
 		<input type="submit" value="Loeschen">
-		}
-	</li>
+		}</td>
+	</tr>
 	}
-</ul>
+</table>
 
 <h2>Fuege einen neuen Studenten hinzu.</h2>
 @form(routes.StudentCtrl.newStudent()) {

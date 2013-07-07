@@ -1,0 +1,29 @@
+@(docents: List[Docent], docentForm: Form[Docent])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Todo list") {
+<h1>@docents.size() @if(docents.size()==1) {Dozent} else {Dozenten}</h1>
+
+<ul>
+	@for(docent <- docents) {
+	<li>
+		Name: @docent.name <br>
+		Vorname: @docent.firstName <br>
+		Studienfach: @docent.chair <br>
+		@form(routes.DocentCtrl.deleteDocent(docent.docentId)) {
+		<input type="submit" value="Loeschen">
+		}
+	</li>
+	}
+</ul>
+
+<h2>Fuege einen neuen Dozenten hinzu.</h2>
+@form(routes.DocentCtrl.newDocent()) {
+@inputText(docentForm("Name"))
+@inputText(docentForm("Vorname"))
+@inputText(docentForm("Lehrstuhl"))
+<input type="submit" value="Hinzufuegen">
+}
+}
