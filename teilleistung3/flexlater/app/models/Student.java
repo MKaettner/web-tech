@@ -12,24 +12,24 @@ public class Student extends Model {
 
 	// Attribute
 	@Id
-	public int studentId;
+	public Long studentId;
 	public String name, firstName, major;
 	
 
 	// Methoden
 
-	public static Student find(int studentId) {
-		return null;
-	}
+	public static Finder<Long, Student> find = new Finder (Long.class, Student.class);
 
 	public static List<Student> all() {
-		return null;
+		return find.all();
 	}
 
 	public static void create(Student student) {
+		student.save();
 	}
 
-	public static void delete(int studentId) {
+	public static void delete(Long studentId) {
+		find.ref(studentId).delete();
 	}
 
 	

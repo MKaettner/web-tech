@@ -4,22 +4,26 @@
 @import helper.twitterBootstrap._
 
 @main("Todo list") {
-<h1>@students.size() student(s)</h1>
+<h1>@students.size() @if(students.size()==1) {Student} else {Studenten}</h1>
 
 <ul>
 	@for(student <- students) {
 	<li>
-		@student.name
-		@form(routes.StudentCtrl.deleteStudent(id)) {
-		<input type="submit" value="Delete">
+		Name: @student.name <br>
+		Vorname: @student.firstName <br>
+		Studienfach: @student.major <br>
+		@form(routes.StudentCtrl.deleteStudent(student.studentId)) {
+		<input type="submit" value="Loeschen">
 		}
 	</li>
 	}
 </ul>
 
-<h2>Add a new student</h2>
+<h2>Fuege einen neuen Studenten hinzu.</h2>
 @form(routes.StudentCtrl.newStudent()) {
-@inputText(studentForm("name"))
-<input type="submit" value="Create">
+@inputText(studentForm("Name"))
+@inputText(studentForm("Vorname"))
+@inputText(studentForm("Studienfach"))
+<input type="submit" value="Hinzufuegen">
 }
 }

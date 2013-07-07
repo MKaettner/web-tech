@@ -14,11 +14,18 @@ public class StudentCtrl extends Controller {
 	}
 	
 	public static Result newStudent() {
-		return TODO;
+		Form<Student> filledForm = studentForm.bindFromRequest();
+		if (filledForm.hasErrors()) {
+			return badRequest(views.html.students.render(Student.all(), filledForm));
+		} else {
+			Student.create(filledForm.get());
+			return redirect(routes.StudentCtrl.students());
+		}
 	}
 	
-	public static Result deleteStudent(int id) {
-		return TODO;
+	public static Result deleteStudent(Long studentId) {
+		Student.delete(studentId);
+		return redirect(routes.StudentCtrl.students());
 	}
 	
 }

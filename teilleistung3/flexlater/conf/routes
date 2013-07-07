@@ -8,7 +8,7 @@ GET     /                           controllers.Application.index()
 # Students
 GET		/students					controllers.StudentCtrl.students()
 POST	/students					controllers.StudentCtrl.newStudent()
-POST	/students/:id/delete		controllers.StudentCtrl.deleteTask(id: Integer)		
+POST	/students/:id/delete		controllers.StudentCtrl.deleteStudent(id: Long)		
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
