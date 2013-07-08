@@ -2,11 +2,19 @@ package models;
 
 import java.util.List;
 import javax.persistence.*;
+
+//import com.avaje.ebean.Query;
+
 import play.db.ebean.Model;
+import play.db.ebean.Model.Finder;
 
 @Entity
 public class Exam extends Model {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 917063215248035769L;
 	// Attribute
 	@Id
 	public int examId;
@@ -15,19 +23,23 @@ public class Exam extends Model {
 	
 
 	// Methoden
+	
+	public static Finder<Long, Exam> find = new Finder<Long, Exam> (Long.class, Exam.class);
 
-	public static Exam find(int examId) {
-		return null;
+	public static Exam find(long examId) {
+		return find.ref(examId);
 	}
 
 	public static List<Exam> all() {
-		return null;
+		return find.all();
 	}
 
 	public static void create(Exam exam) {
+		exam.save();
 	}
 
-	public static void delete(int examId) {
+	public static void delete(long examId) {
+		find.ref(examId).delete();
 	}
 
 }

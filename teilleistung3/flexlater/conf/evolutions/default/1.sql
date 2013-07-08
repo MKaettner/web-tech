@@ -4,7 +4,7 @@
 # --- !Ups
 
 create table docent (
-  docent_id                 integer not null,
+  docent_id                 bigint not null,
   name                      varchar(255),
   first_name                varchar(255),
   chair                     varchar(255),
