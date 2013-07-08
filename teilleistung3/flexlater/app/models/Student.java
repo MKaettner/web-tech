@@ -13,6 +13,7 @@ public class Student extends Model {
 	// Attribute
 	@Id
 	public Long studentId;
+
 	public String name, firstName, major;
 	
 

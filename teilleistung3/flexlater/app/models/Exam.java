@@ -18,6 +18,8 @@ public class Exam extends Model {
 	// Attribute
 	@Id
 	public int examId;
+	
+
 	public String name, place, date, time, docent, major;
 	public int duration, maxParticipant, docentId;
 	

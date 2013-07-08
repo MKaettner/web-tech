@@ -13,6 +13,7 @@ public class Docent extends Model {
 	// Attribute
 	@Id
 	public Long docentId;
+
 	public String name, firstName, chair;
 
 	// Methoden
