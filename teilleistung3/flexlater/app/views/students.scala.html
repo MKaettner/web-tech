@@ -25,11 +25,41 @@
 	}
 </table>
 
-<h2>Fuege einen neuen Studenten hinzu.</h2>
+<h2>Füge einen neuen Studenten hinzu.</h2>
 @form(routes.StudentCtrl.newStudent()) {
-@inputText(studentForm("name"))
-@inputText(studentForm("firstName"))
-@inputText(studentForm("major"))
+<input type="text" name="@studentForm("name").name" placeholder="Name">
+@if(studentForm("name").hasErrors) { 
+@for(error <- studentForm("name").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+    <br>
+<input type="text" name="@studentForm("firstName").name" placeholder="Vorname">
+@if(studentForm("firstName").hasErrors) { 
+@for(error <- studentForm("firstName").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+    <br>
+<input type="text" name="@studentForm("major").name" placeholder="Studienfach">
+@if(studentForm("major").hasErrors) { 
+@for(error <- studentForm("major").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+<br>
 <input type="submit" value="Hinzufügen">
 }
 }
