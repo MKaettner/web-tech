@@ -3,7 +3,7 @@
 @import helper._
 @import helper.twitterBootstrap._
 
-@main("Todo list") {
+@main("Prüfungsverwaltung") {
 <h1>@students.size() @if(students.size()==1) {Student} else {Studenten}</h1>
 
 <table>
@@ -19,7 +19,7 @@
 		<td>@student.firstName</td>
 		<td>@student.major</td>
 		<td>@form(routes.StudentCtrl.deleteStudent(student.studentId)) {
-		<input type="submit" value="Loeschen">
+		<input type="submit" value="Löschen">
 		}</td>
 	</tr>
 	}
@@ -27,9 +27,9 @@
 
 <h2>Fuege einen neuen Studenten hinzu.</h2>
 @form(routes.StudentCtrl.newStudent()) {
-@inputText(studentForm("Name"))
-@inputText(studentForm("Vorname"))
-@inputText(studentForm("Studienfach"))
-<input type="submit" value="Hinzufuegen">
+@inputText(studentForm("name"))
+@inputText(studentForm("firstName"))
+@inputText(studentForm("major"))
+<input type="submit" value="Hinzufügen">
 }
 }

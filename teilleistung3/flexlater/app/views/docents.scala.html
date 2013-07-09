@@ -3,7 +3,7 @@
 @import helper._
 @import helper.twitterBootstrap._
 
-@main("Todo list") {
+@main("Prüfungsverwaltung") {
 <h1>@docents.size() @if(docents.size()==1) {Dozent} else {Dozenten}</h1>
 
 <ul>
@@ -13,7 +13,7 @@
 		Vorname: @docent.firstName <br>
 		Studienfach: @docent.chair <br>
 		@form(routes.DocentCtrl.deleteDocent(docent.docentId)) {
-		<input type="submit" value="Loeschen">
+		<input type="submit" value="Löschen">
 		}
 	</li>
 	}
@@ -21,9 +21,22 @@
 
 <h2>Fuege einen neuen Dozenten hinzu.</h2>
 @form(routes.DocentCtrl.newDocent()) {
-@inputText(docentForm("Name"))
-@inputText(docentForm("Vorname"))
-@inputText(docentForm("Lehrstuhl"))
-<input type="submit" value="Hinzufuegen">
+<input type="text" name="@docentForm("name").name" placeholder="Name"><span class="help-inline">
+
+    </span><br>
+<input type="text" name="@docentForm("firstName").name" placeholder="Vorname">
+@if(docentForm("firstName").hasErrors) { 
+@for(error <- docentForm("firstName").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+    <br>
+<input type="text" name="@docentForm("chair").name" placeholder="Lehrstuhl"><span class="help-inline">
+    </span><br>
+<input type="submit" value="Hinzufügen">
 }
 }

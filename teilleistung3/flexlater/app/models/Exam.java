@@ -3,10 +3,8 @@ package models;
 import java.util.List;
 import javax.persistence.*;
 
-//import com.avaje.ebean.Query;
-
-import play.db.ebean.Model;
-import play.db.ebean.Model.Finder;
+import play.db.ebean.*;
+import play.data.validation.Constraints.*;
 
 @Entity
 public class Exam extends Model {
@@ -19,8 +17,9 @@ public class Exam extends Model {
 	@Id
 	public int examId;
 	
-
+	@Required
 	public String name, place, date, time, docent, major;
+	@Required
 	public int duration, maxParticipant, docentId;
 	
 

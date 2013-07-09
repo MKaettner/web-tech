@@ -3,8 +3,8 @@
 @import helper._
 @import helper.twitterBootstrap._
 
-@main("Todo list") {
-<h1>@exams.size() @if(exams.size()==1) {Pr�fung} else {Pr�fungen}</h1>
+@main("Prüfungsverwaltung") {
+<h1>@exams.size() @if(exams.size()==1) {Prüfung} else {Prüfungen}</h1>
 
 <table>
 	<tr>
@@ -29,22 +29,22 @@
 		<td>@exam.duration</td>
 		<td>@exam.maxParticipant</td>
 		<td>@form(routes.ExamCtrl.deleteExam(exam.examId)) {
-		<input type="submit" value="Loeschen">
+		<input type="submit" value="Löschen">
 		}</td>
 	</tr>
 	}
 </table>
 
-<h2>Fuege eine neuen Pr�fung hinzu.</h2>
+<h2>Fuege eine neuen Prüfung hinzu.</h2>
 @form(routes.ExamCtrl.newExam()) {
-@inputText(examForm("Bezeichnung"))
-@inputText(examForm("Ort"))
-@inputText(examForm("Datum"))
-@inputText(examForm("Uhrzeit"))
-@inputText(examForm("Dozent"))
-@inputText(examForm("Studienfach"))
-@inputText(examForm("Dauer"))
-@inputText(examForm("Maximale Teilnehmerzahl"))
-<input type="submit" value="Hinzufuegen">
+@inputText(examForm("name"))
+@inputText(examForm("place"))
+@inputText(examForm("date"))
+@inputText(examForm("time"))
+@inputText(examForm("docent"))
+@inputText(examForm("major"))
+@inputText(examForm("duration"))
+@inputText(examForm("maxParticipant"))
+<input type="submit" value="Hinzufügen">
 }
 }

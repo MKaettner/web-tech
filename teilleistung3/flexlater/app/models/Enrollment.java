@@ -1,8 +1,10 @@
 package models;
 
-import java.util.*;
-import play.db.ebean.*;
+import java.util.List;
 import javax.persistence.*;
+
+import play.db.ebean.*;
+import play.data.validation.Constraints.*;
 
 @Entity
 public class Enrollment extends Model {
