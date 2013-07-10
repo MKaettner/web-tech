@@ -3,10 +3,10 @@
 @import helper._
 @import helper.twitterBootstrap._
 
-@main("Prüfungsverwaltung") {
+@main("Prüfungsverwaltung - Dozenten") {
 <h1>@docents.size() @if(docents.size()==1) {Dozent} else {Dozenten}</h1>
 
-<table>
+<table class="Liste">
 	<tr>
 	<td>Name</td>
 	<td>Vorname</td>

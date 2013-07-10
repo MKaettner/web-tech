@@ -23,7 +23,7 @@ public class StudentCtrl extends Controller {
 		}
 	}
 
-	public static Result deleteStudent(Long studentId) {
+	public static Result deleteStudent(Integer studentId) {
 		Student.delete(studentId);
 		return redirect(routes.StudentCtrl.students());
 	}

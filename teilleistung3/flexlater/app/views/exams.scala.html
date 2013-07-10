@@ -3,10 +3,10 @@
 @import helper._
 @import helper.twitterBootstrap._
 
-@main("Prüfungsverwaltung") {
+@main("Prüfungsverwaltung - Prüfungen") {
 <h1>@exams.size() @if(exams.size()==1) {Prüfung} else {Prüfungen}</h1>
 
-<table>
+<table class="Liste">
 	<tr>
 	<td>Bezeichnung</td>
 	<td>Ort</td>
@@ -35,16 +35,96 @@
 	}
 </table>
 
-<h2>Fuege eine neuen Prüfung hinzu.</h2>
+<h2>Füge eine neuen Prüfung hinzu.</h2>
 @form(routes.ExamCtrl.newExam()) {
-@inputText(examForm("name"))
-@inputText(examForm("place"))
-@inputText(examForm("date"))
-@inputText(examForm("time"))
-@inputText(examForm("docent"))
-@inputText(examForm("major"))
-@inputText(examForm("duration"))
-@inputText(examForm("maxParticipant"))
+<input type="text" name="@examForm("name").name" placeholder="Bezeichnung">
+@if(examForm("name").hasErrors) { 
+@for(error <- examForm("name").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+<br>
+<input type="text" name="@examForm("place").name" placeholder="Ort">
+@if(examForm("place").hasErrors) { 
+@for(error <- examForm("place").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+<br>
+<input type="text" name="@examForm("date").name" placeholder="Datum">
+@if(examForm("date").hasErrors) { 
+@for(error <- examForm("date").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+<br>
+<input type="text" name="@examForm("time").name" placeholder="Uhrzeit">
+@if(examForm("time").hasErrors) { 
+@for(error <- examForm("time").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+<br>
+<input type="text" name="@examForm("docent").name" placeholder="Dozent">
+@if(examForm("docent").hasErrors) { 
+@for(error <- examForm("docent").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+<br>
+<input type="text" name="@examForm("major").name" placeholder="Studiengang">
+@if(examForm("major").hasErrors) { 
+@for(error <- examForm("major").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+<br>
+<input type="text" name="@examForm("duration").name" placeholder="Dauer">
+@if(examForm("duration").hasErrors) { 
+@for(error <- examForm("duration").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+<br>
+<input type="text" name="@examForm("maxParticipant").name" placeholder="Maximale Teilnehmerzahl">
+@if(examForm("maxParticipant").hasErrors) { 
+@for(error <- examForm("maxParticipant").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+<br>
 <input type="submit" value="Hinzufügen">
 }
 }

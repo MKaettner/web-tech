@@ -9,25 +9,22 @@ import play.data.validation.Constraints.*;
 @Entity
 public class Exam extends Model {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 917063215248035769L;
+		
 	// Attribute
 	@Id
-	public int examId;
+	public Integer examId;
 	
 	@Required
 	public String name, place, date, time, docent, major;
 	@Required
-	public int duration, maxParticipant, docentId;
+	public Integer duration, maxParticipant, docentId;
 	
 
 	// Methoden
 	
-	public static Finder<Long, Exam> find = new Finder<Long, Exam> (Long.class, Exam.class);
+	public static Finder<Integer, Exam> find = new Finder<Integer, Exam> (Integer.class, Exam.class);
 
-	public static Exam find(long examId) {
+	public static Exam find(Integer examId) {
 		return find.ref(examId);
 	}
 
@@ -39,7 +36,7 @@ public class Exam extends Model {
 		exam.save();
 	}
 
-	public static void delete(long examId) {
+	public static void delete(Integer examId) {
 		find.ref(examId).delete();
 	}
 

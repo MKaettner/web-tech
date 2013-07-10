@@ -11,13 +11,13 @@ public class Docent extends Model {
 
 	// Attribute
 	@Id
-	public Long docentId;
+	public Integer docentId;
 	@Required
 	public String name, firstName, chair;
 
 	// Methoden
 
-	public static Finder<Long, Docent> find = new Finder(Long.class,
+	public static Finder<Integer, Docent> find = new Finder(Integer.class,
 			Docent.class);
 
 	public static List<Docent> all() {
@@ -28,7 +28,7 @@ public class Docent extends Model {
 		docent.save();
 	}
 
-	public static void delete(Long docentId) {
+	public static void delete(Integer docentId) {
 		find.ref(docentId).delete();
 	}
 

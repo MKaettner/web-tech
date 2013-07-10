@@ -4,7 +4,7 @@
 # --- !Ups
 
 create table docent (
-  docent_id                 bigint not null,
+  docent_id                 integer not null,
   name                      varchar(255),
   first_name                varchar(255),
   chair                     varchar(255),
@@ -13,6 +13,8 @@ create table docent (
 
 create table enrollment (
   enrollment_id             integer not null,
+  exam_id                   integer,
+  student_id                integer,
   constraint pk_enrollment primary key (enrollment_id))
 ;
 
@@ -31,7 +33,7 @@ create table exam (
 ;
 
 create table student (
-  student_id                bigint not null,
+  student_id                integer not null,
   name                      varchar(255),
   first_name                varchar(255),
   major                     varchar(255),

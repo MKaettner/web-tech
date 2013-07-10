@@ -1,0 +1,30 @@
+@(enrollments: List[Enrollment], enrollmentForm: Form[Enrollment])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Prüfungsverwaltung - Prüfungsanmeldung") {
+<h1>@enrollments.size() @if(enrollments.size()==1) {Prüfungsanmeldung} else {Prüfungsanmeldungen}</h1>
+
+<table class="Liste">
+	<tr>
+	<td>Prüfungsanmeldungs-ID</td>
+	<td>Prüfungs-ID</td>
+	<td>Studenten-ID</td>
+	<td></td>
+	</tr>
+	@for(enrollment <- enrollments) {
+	<tr>
+		<td>@enrollment.enrollmentId</td>
+		<td>@enrollment.examId</td>
+		<td>@enrollment.studentId</td>
+		<td>@form(routes.EnrollmentCtrl.deleteEnrollment(enrollment.enrollmentId)) {
+		<input type="submit" value="Löschen">
+		}</td>
+	</tr>
+	}
+</table>
+
+<h2>Füge eine neue Prüfung hinzu.</h2>
+}
+

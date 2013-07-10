@@ -2,7 +2,6 @@ package controllers;
 
 import play.mvc.*;
 import models.Exam;
-import models.Student;
 import play.data.Form;
 
 
@@ -25,7 +24,7 @@ public class ExamCtrl extends Controller{
 	
 	}
 	
-	public static Result deleteExam(Long examId) {
+	public static Result deleteExam(Integer examId) {
 		Exam.delete(examId);
 		return redirect(routes.ExamCtrl.exams());
 	}
