@@ -4,19 +4,19 @@
 @import helper.twitterBootstrap._
 
 @main("Prüfungsverwaltung - Prüfungen") {
-<h1>@exams.size() @if(exams.size()==1) {Prüfung} else {Prüfungen}</h1>
-
+<h1>@exams.size() @if(exams.size()==1) {Prüfung} else {Prüfungen} vorhanden.</h1>
+<div class="Scroll">
 <table class="Liste">
 	<tr>
-	<td>Bezeichnung</td>
-	<td>Ort</td>
-	<td>Datum</td>
-	<td>Uhrzeit</td>
-	<td>Dozent</td>
-	<td>Studienfach</td>
-	<td>Dauer</td>
-	<td>Maximale Teilnehmerzahl</td>
-	<td></td>
+	<th>Bezeichnung</th>
+	<th>Ort</th>
+	<th>Datum</th>
+	<th>Uhrzeit</th>
+	<th>Dozent</th>
+	<th>Studiengang</th>
+	<th>Dauer</th>
+	<th>Maximale Teilnehmerzahl</th>
+	<th></th>
 	</tr>
 	@for(exam <- exams) {
 	<tr>
@@ -34,21 +34,21 @@
 	</tr>
 	}
 </table>
-
-<h2>Füge eine neuen Prüfung hinzu.</h2>
+</div>
+<h2>Füge eine neue Prüfung hinzu.</h2>
 @form(routes.ExamCtrl.newExam()) {
-<input type="text" name="@examForm("name").name" placeholder="Bezeichnung">
+<input type="text" name="@examForm("name").name" id="examName" placeholder="Bezeichnung">
 @if(examForm("name").hasErrors) { 
 @for(error <- examForm("name").errors) {
 <span class="help-inline">
    @if(error.message== "error.required") {
    Eingabe erforderlich 
-   } 
+   }
     </span>
     }
     }
 <br>
-<input type="text" name="@examForm("place").name" placeholder="Ort">
+<input type="text" name="@examForm("place").name" id="examPlace" placeholder="Ort">
 @if(examForm("place").hasErrors) { 
 @for(error <- examForm("place").errors) {
 <span class="help-inline">
@@ -59,7 +59,7 @@
     }
     }
 <br>
-<input type="text" name="@examForm("date").name" placeholder="Datum">
+<input type="text" name="@examForm("date").name" id="examDate" placeholder="Datum">
 @if(examForm("date").hasErrors) { 
 @for(error <- examForm("date").errors) {
 <span class="help-inline">
@@ -70,7 +70,7 @@
     }
     }
 <br>
-<input type="text" name="@examForm("time").name" placeholder="Uhrzeit">
+<input type="text" name="@examForm("time").name" id="examTime" placeholder="Uhrzeit">
 @if(examForm("time").hasErrors) { 
 @for(error <- examForm("time").errors) {
 <span class="help-inline">
@@ -81,7 +81,7 @@
     }
     }
 <br>
-<input type="text" name="@examForm("docent").name" placeholder="Dozent">
+<input type="text" name="@examForm("docent").name" id="examDocent" placeholder="Dozent">
 @if(examForm("docent").hasErrors) { 
 @for(error <- examForm("docent").errors) {
 <span class="help-inline">
@@ -92,7 +92,7 @@
     }
     }
 <br>
-<input type="text" name="@examForm("major").name" placeholder="Studiengang">
+<input type="text" name="@examForm("major").name" id="examMajor" placeholder="Studiengang">
 @if(examForm("major").hasErrors) { 
 @for(error <- examForm("major").errors) {
 <span class="help-inline">
@@ -103,7 +103,7 @@
     }
     }
 <br>
-<input type="text" name="@examForm("duration").name" placeholder="Dauer">
+<input type="text" name="@examForm("duration").name" id="examDuration" placeholder="Dauer">
 @if(examForm("duration").hasErrors) { 
 @for(error <- examForm("duration").errors) {
 <span class="help-inline">
@@ -114,7 +114,7 @@
     }
     }
 <br>
-<input type="text" name="@examForm("maxParticipant").name" placeholder="Maximale Teilnehmerzahl">
+<input type="text" name="@examForm("maxParticipant").name"  id="examParticipant" placeholder="Maximale Teilnehmerzahl">
 @if(examForm("maxParticipant").hasErrors) { 
 @for(error <- examForm("maxParticipant").errors) {
 <span class="help-inline">
@@ -125,6 +125,8 @@
     }
     }
 <br>
+<input type="hidden" name"@examForm("docentId").name">
+
 <input type="submit" value="Hinzufügen">
 }
 }

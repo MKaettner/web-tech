@@ -1,0 +1,43 @@
+docents:
+
+  - !!models.Docent
+    name: Henrich
+    firstName: Andreas
+    chair: Medieninformatik
+
+  - !!models.Docent
+    name: Sperker
+    firstName: Hans-Christian
+    chair: Medieninformatik
+ 
+  - !!models.Docent
+    name: Hub
+    firstName: Adrian
+    chair: Medieninformatik
+
+  - !!models.Docent
+    name: Blank
+    firstName: Daniel
+    chair: Medieninformatik
+    
+  - !!models.Docent
+    name: Kufer
+    firstName: Stefan
+    chair: Medieninformatik
+    
+students:
+
+  - !!models.Student
+    name: Karp
+    firstName: Jascha
+    major: Wirtschaftsinformatik
+
+  - !!models.Student
+    name: Welzel
+    firstName: Kathrin
+    major: Wirtschaftsinformatik
+ 
+  - !!models.Student
+    name: Kättner
+    firstName: Markus
+    major: Wirtschaftsinformatik

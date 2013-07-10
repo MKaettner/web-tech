@@ -4,14 +4,14 @@
 @import helper.twitterBootstrap._
 
 @main("Prüfungsverwaltung - Dozenten") {
-<h1>@docents.size() @if(docents.size()==1) {Dozent} else {Dozenten}</h1>
-
+<h1>@docents.size() @if(docents.size()==1) {Dozent} else {Dozenten} vorhanden.</h1>
+<div class="Scroll">
 <table class="Liste">
 	<tr>
-	<td>Name</td>
-	<td>Vorname</td>
-	<td>Lehrstuhl</td>
-	<td></td>
+	<th>Name</th>
+	<th>Vorname</th>
+	<th>Lehrstuhl</th>
+	<th></th>
 	</tr>
 	@for(docent <- docents) {
 	<tr>
@@ -24,10 +24,10 @@
 	</tr>
 	}
 </table>
-
+</div>
 <h2>Füge einen neuen Dozenten hinzu.</h2>
 @form(routes.DocentCtrl.newDocent()) {
-<input type="text" name="@docentForm("name").name" placeholder="Name"><br>
+<input type="text" name="@docentForm("name").name" id="docentName" placeholder="Name">	
 @if(docentForm("name").hasErrors) { 
 @for(error <- docentForm("name").errors) {
 <span class="help-inline">
@@ -37,7 +37,8 @@
     </span>
     }
     }
-<input type="text" name="@docentForm("firstName").name" placeholder="Vorname">
+    <br>
+<input type="text" name="@docentForm("firstName").name" id="docentFirstName" placeholder="Vorname">
 @if(docentForm("firstName").hasErrors) { 
 @for(error <- docentForm("firstName").errors) {
 <span class="help-inline">
@@ -48,7 +49,7 @@
     }
     }
     <br>
-<input type="text" name="@docentForm("chair").name" placeholder="Lehrstuhl">
+<input type="text" name="@docentForm("chair").name" id="docentChair" placeholder="Lehrstuhl">
 @if(docentForm("chair").hasErrors) { 
 @for(error <- docentForm("chair").errors) {
 <span class="help-inline">
