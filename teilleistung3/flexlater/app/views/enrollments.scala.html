@@ -4,8 +4,9 @@
 @import helper.twitterBootstrap._
 
 @main("Prüfungsverwaltung - Prüfungsanmeldung") {
-<h1>@enrollments.size() @if(enrollments.size()==1) {Prüfungsanmeldung} else {Prüfungsanmeldungen} vorhanden.</h1>
-<div class="Scroll">
+
+<h1>Füge eine neue Prüfung hinzu.</h1>
+<h2>@enrollments.size() @if(enrollments.size()==1) {Prüfungsanmeldung} else {Prüfungsanmeldungen} vorhanden.</h2>
 <table class="Liste">
 	<tr>
 	<th>Prüfungsanmeldungs-ID</th>
@@ -24,7 +25,5 @@
 	</tr>
 	}
 </table>
-</div>
-<h2>Füge eine neue Prüfung hinzu.</h2>
 }
 

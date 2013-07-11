@@ -28,7 +28,6 @@ create table exam (
   major                     varchar(255),
   duration                  integer,
   max_participant           integer,
-  docent_id                 integer,
   constraint pk_exam primary key (exam_id))
 ;
 

@@ -4,28 +4,7 @@
 @import helper.twitterBootstrap._
 
 @main("Prüfungsverwaltung - Studenten") {
-<h1>@students.size() @if(students.size()==1) {Student} else {Studenten} vorhanden.</h1>
-<div class="Scroll">
-<table class="Liste">
-	<tr>
-	<th>Name</th>
-	<th>Vorname</th>
-	<th>Studiengang</th>
-	<th></th>
-	</tr>
-	@for(student <- students) {
-	<tr>
-		<td>@student.name</td>
-		<td>@student.firstName</td>
-		<td>@student.major</td>
-		<td>@form(routes.StudentCtrl.deleteStudent(student.studentId)) {
-		<input type="submit" value="Löschen">
-		}</td>
-	</tr>
-	}
-</table>
-</div>
-<h2>Füge einen neuen Studenten hinzu.</h2>
+<h1>Füge einen neuen Studenten hinzu.</h1>
 @form(routes.StudentCtrl.newStudent()) {
 <input type="text" name="@studentForm("name").name" id="studentName" placeholder="Name">
 @if(studentForm("name").hasErrors) { 
@@ -61,5 +40,24 @@
     }
 <br>
 <input type="submit" value="Hinzufügen">
+<h2>@students.size() @if(students.size()==1) {Student} else {Studenten} vorhanden.</h2>
+<table class="Liste">
+	<tr>
+	<th>Name</th>
+	<th>Vorname</th>
+	<th>Studiengang</th>
+	<th></th>
+	</tr>
+	@for(student <- students) {
+	<tr>
+		<td>@student.name</td>
+		<td>@student.firstName</td>
+		<td>@student.major</td>
+		<td>@form(routes.StudentCtrl.deleteStudent(student.studentId)) {
+		<input type="submit" value="Löschen">
+		}</td>
+	</tr>
+	}
+</table>
 }
 }

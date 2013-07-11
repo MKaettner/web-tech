@@ -17,7 +17,8 @@ public class Exam extends Model {
 	@Required
 	public String name, place, date, time, docent, major;
 	@Required
-	public Integer duration, maxParticipant, docentId;
+	public Integer duration, maxParticipant;
+	// docentId;
 	
 
 	// Methoden
