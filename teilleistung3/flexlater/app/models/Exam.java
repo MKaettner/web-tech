@@ -15,10 +15,11 @@ public class Exam extends Model {
 	public Integer examId;
 	
 	@Required
-	public String name, place, date, time, docent, major;
+	public String name, place, date, time, major;
 	@Required
-	public Integer duration, maxParticipant;
-	// docentId;
+	public Integer duration, maxParticipant, docentId;
+	@ManyToMany(cascade=CascadeType.REMOVE)
+	public List<Docent> docents;
 	
 
 	// Methoden
@@ -39,6 +40,9 @@ public class Exam extends Model {
 
 	public static void delete(Integer examId) {
 		find.ref(examId).delete();
+	}
+	public static void update(Exam updatedDocent) {
+		updatedDocent.update();
 	}
 
 }

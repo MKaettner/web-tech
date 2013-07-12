@@ -1,4 +1,4 @@
-@(exams: List[Exam], examForm: Form[Exam])
+@(exams: List[Exam], examForm: Form[Exam], docents: Map[Integer, String])
 
 @import helper._
 @import helper.twitterBootstrap._
@@ -6,28 +6,28 @@
 @main("Prüfungsverwaltung - Prüfungen") {
 
 
-<h1>Füge eine neue Prüfung hinzu.</h1>
-@form(routes.ExamCtrl.newExam()) {
-<input type="text" name="@examForm("name").name" id="examName" placeholder="Bezeichnung">
-@if(examForm("name").hasErrors) { 
-@for(error <- examForm("name").errors) {
-<span class="help-inline">
-   @if(error.message== "error.required") {
-   Eingabe erforderlich 
-   }
-    </span>
+	<h1>Füge eine neue Prüfung hinzu.</h1>
+	@form(routes.ExamCtrl.newExam()) {
+	<input type="text" name="@examForm("name").name" id="examName" placeholder="Bezeichnung">
+	@if(examForm("name").hasErrors) { 
+		@for(error <- examForm("name").errors) {
+		<span class="help-inline">
+   			@if(error.message== "error.required") {
+   			Eingabe erforderlich 
+			}
+    	</span>
+    	}
     }
-    }
-<br>
-<input type="text" name="@examForm("place").name" id="examPlace" placeholder="Ort">
-@if(examForm("place").hasErrors) { 
-@for(error <- examForm("place").errors) {
-<span class="help-inline">
-   @if(error.message== "error.required") {
-   Eingabe erforderlich 
-   } 
-    </span>
-    }
+	<br>
+	<input type="text" name="@examForm("place").name" id="examPlace" placeholder="Ort">
+	@if(examForm("place").hasErrors) { 
+	@for(error <- examForm("place").errors) {
+		<span class="help-inline">
+   			@if(error.message== "error.required") {
+   			Eingabe erforderlich 
+   			} 
+    	</span>
+    	}
     }
 <br>
 <input type="text" name="@examForm("date").name" id="examDate" placeholder="Datum">
@@ -95,36 +95,48 @@
     </span>
     }
     }
-<br>
-<input type="submit" value="Hinzufügen">
-<h2>@exams.size() @if(exams.size()==1) {Prüfung} else {Prüfungen} vorhanden.</h2>
-<table class="Liste">
-	<tr>
-	<th>Bezeichnung</th>
-	<th>Ort</th>
-	<th>Datum</th>
-	<th>Uhrzeit</th>
-	<th>Dozent</th>
-	<th>Studiengang</th>
-	<th>Dauer</th>
-	<th>Maximale Teilnehmerzahl</th>
-	<th></th>
-	</tr>
-	@for(exam <- exams) {
-	<tr>
-		<td>@exam.name</td>
-		<td>@exam.place</td>
-		<td>@exam.date</td>
-		<td>@exam.time</td>
-		<td>@exam.docent</td>
-		<td>@exam.major</td>
-		<td>@exam.duration</td>
-		<td>@exam.maxParticipant</td>
-		<td>@form(routes.ExamCtrl.deleteExam(exam.examId)) {
-		<input type="submit" value="Löschen">
-		}</td>
-	</tr>
+	<br>
+	<select name="@examForm("docentId").name id="examDocent">
+	<option value="null"> </option>
+  		@for((docentId, name) <- docents) {
+  		<option value="@docentId">@name</option>
+		}
+	</select>
+	<br>
+	<input type="submit" value="Hinzufügen">
+	<h2>@exams.size() @if(exams.size()==1) {Prüfung} else {Prüfungen} vorhanden.</h2>
+	<table class="Liste">
+		<tr>
+		<th>Bezeichnung</th>
+		<th>Ort</th>
+		<th>Datum</th>
+		<th>Uhrzeit</th>
+		<th>Dozent</th>
+		<th>Studiengang</th>
+		<th>Dauer</th>
+		<th>Maximale Teilnehmerzahl</th>
+		<th></th>
+		</tr>
+			@for(exam <- exams) {
+			<tr>
+			<td>@exam.name</td>
+			<td>@exam.place</td>
+			<td>@exam.date</td>
+			<td>@exam.time</td>
+			<td>
+				@for((docentId, name) <- docents) {
+				@name
+				}
+			</td>
+			<td>@exam.major</td>
+			<td>@exam.duration</td>
+			<td>@exam.maxParticipant</td>
+				<td>@form(routes.ExamCtrl.deleteExam(exam.examId)) {
+				<input type="submit" value="Löschen">
+				}
+			</td>
+		</tr>
+		}
+	</table>
 	}
-</table>
-}
 }

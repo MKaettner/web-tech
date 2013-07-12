@@ -1,7 +1,7 @@
 package controllers;
 
 import play.mvc.*;
-import models.Enrollment;
+import models.*;
 import play.data.Form;
 
 public class EnrollmentCtrl extends Controller {
