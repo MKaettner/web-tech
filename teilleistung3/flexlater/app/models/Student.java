@@ -1,6 +1,6 @@
 package models;
 
-import java.util.List;
+import java.util.*;
 import javax.persistence.*;
 
 import play.db.ebean.*;
@@ -13,7 +13,11 @@ public class Student extends Model {
 	@Id
 	public Integer studentId;
 	@Required
-	public String name, firstName, major;
+	public String name, firstName;
+	@Required
+	public Integer majorId;
+	@ManyToMany(mappedBy="students")
+	public List<Major> majors;
 	
 
 	// Methoden

@@ -9,14 +9,14 @@ public class StudentCtrl extends Controller {
 	static Form<Student> studentForm = Form.form(Student.class);
 
 	public static Result students() {
-		return ok(views.html.students.render(Student.all(), studentForm));
+		return ok(views.html.students.render(Student.all(), studentForm, Major.all()));
 	}
 
 	public static Result newStudent() {
 		Form<Student> filledForm = studentForm.bindFromRequest();
 		if (filledForm.hasErrors()) {
 			return badRequest(views.html.students.render(Student.all(),
-					filledForm));
+					filledForm, Major.all()));
 		} else {
 			Student.create(filledForm.get());
 			return redirect(routes.StudentCtrl.students());

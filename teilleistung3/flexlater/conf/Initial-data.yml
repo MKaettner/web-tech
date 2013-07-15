@@ -30,14 +30,20 @@ students:
   - !!models.Student
     name: Karp
     firstName: Jascha
-    major: Wirtschaftsinformatik
+    majorId: 1
 
   - !!models.Student
     name: Welzel
     firstName: Kathrin
-    major: Wirtschaftsinformatik
+    majorId: 1
  
   - !!models.Student
     name: Kättner
     firstName: Markus
-    major: Wirtschaftsinformatik
+    majorId: 1
+    
+majors:
+
+  - !!models.Major
+    name: Wirtschaftsinformatik
+    majorId: 1

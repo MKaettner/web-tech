@@ -14,7 +14,8 @@ public class Docent extends Model {
 	public Integer docentId;
 	@Required
 	public String name, firstName, chair;
-
+	@ManyToMany(mappedBy="docents")
+	public List<Exam> exams;
 
 	// Methoden
 

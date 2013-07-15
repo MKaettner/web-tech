@@ -1,6 +1,6 @@
 package models;
 
-import java.util.List;
+import java.util.*;
 import javax.persistence.*;
 
 import play.db.ebean.*;
@@ -14,6 +14,9 @@ public class Enrollment extends Model {
 	public Integer enrollmentId;
 	@Required
 	public Integer examId, studentId;
+	@ManyToMany(cascade=CascadeType.PERSIST)
+	public List<Exam> exams;
+	
 
 	// Methoden
 

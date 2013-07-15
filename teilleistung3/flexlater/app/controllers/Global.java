@@ -19,6 +19,10 @@ public class Global extends GlobalSettings {
     if(Ebean.find(Docent.class).findRowCount() == 0) {
         Map<String,List<Object>> all = (Map<String,List<Object>>)Yaml.load("initial-data.yml");
         Ebean.save(all.get("docents"));
-      }
+    }
+    if(Ebean.find(Major.class).findRowCount() == 0) {
+        Map<String,List<Object>> all = (Map<String,List<Object>>)Yaml.load("initial-data.yml");
+        Ebean.save(all.get("majors"));
+    }
   }
 }

@@ -28,6 +28,9 @@
         		<li class="@("active".when(request.path.contains("enrollments")))">
         			<a href="@routes.EnrollmentCtrl.enrollments">Prüfungsanmeldungen</a>
         		</li>
+        		<li class="@("active".when(request.path.contains("majors")))">
+        			<a href="@routes.MajorCtrl.majors">Studiengänge</a>
+        		</li>
         	</ul>
         	<div id="content_container">
         	   	@content

@@ -1,4 +1,4 @@
-@(exams: List[Exam], examForm: Form[Exam], docents: List[Docent])
+@(exams: List[Exam], examForm: Form[Exam], docents: List[Docent], majors: List[Major])
 
 @import helper._
 @import helper.twitterBootstrap._
@@ -58,20 +58,19 @@
 		<option value="@docent.docentId">@docent.name</option>
 		}
 	</select>
-	@if(examForm("docentId")=="") {
+	@if(examForm("docentId")==null) {
 	Eingabe erforderlich
 	}
 	<br>
-	<input type="text" name="@examForm("major").name" id="examMajor" placeholder="Studiengang">
-	@if(examForm("major").hasErrors) { 
-		@for(error <- examForm("major").errors) {
-		<span class="help-inline">
-   			@if(error.message== "error.required") {
-   			Eingabe erforderlich 
-   			} 
-    	</span>
-    	}
-    }
+	<select name="@examForm("majorId").name" id="examMajor" placeholder="Studiengang">
+	<option value="">Studiengang wählen</option>
+		@for(major <- majors) {
+		<option value="@major.majorId">@major.name</option>
+		}
+	</select>
+	@if(examForm("majorId")==null) {
+	Eingabe erforderlich
+	}
 	<br>
 	<input type="text" name="@examForm("duration").name" id="examDuration" placeholder="Dauer">
 	@if(examForm("duration").hasErrors) { 
@@ -122,7 +121,13 @@
 			}
 			}
 			</td>
-			<td>@exam.major</td>
+			<td>
+			@for(major <- majors) {
+			@if(exam.majorId == major.majorId) {
+			@major.name
+			}
+			}
+			</td>
 			<td>@exam.duration</td>
 			<td>@exam.maxParticipant</td>
 				<td>@form(routes.ExamCtrl.deleteExam(exam.examId)) {

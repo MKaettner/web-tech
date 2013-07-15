@@ -1,4 +1,4 @@
-@(students: List[Student], studentForm: Form[Student])
+@(students: List[Student], studentForm: Form[Student], majors: List[Major])
 
 @import helper._
 @import helper.twitterBootstrap._
@@ -28,23 +28,25 @@
     }
     }
     <br>
-<input type="text" name="@studentForm("major").name" id="studentMajor" placeholder="Studiengang">
-@if(studentForm("major").hasErrors) { 
-@for(error <- studentForm("major").errors) {
-<span class="help-inline">
-   @if(error.message== "error.required") {
-   Eingabe erforderlich 
-   } 
-    </span>
-    }
-    }
-<br>
+	<select name="@studentForm("majorId").name" id="studentMajor" placeholder="Studiengang">
+	<option value="">Studiengang wählen</option>
+		@for(major <- majors) {
+		<option value="@major.majorId">@major.name</option>
+		}
+	</select>
+	@if(studentForm("majorId")==null) {
+	Eingabe erforderlich
+	}
+	<br>
 <input type="submit" value="Hinzufügen">
+
+
 <h2>@students.size() @if(students.size()==1) {Student} else {Studenten} vorhanden.</h2>
 <table class="Liste">
 	<tr>
 	<th>Name</th>
 	<th>Vorname</th>
+	<th>Matrikelnummer</th>
 	<th>Studiengang</th>
 	<th></th>
 	</tr>
@@ -52,7 +54,14 @@
 	<tr>
 		<td>@student.name</td>
 		<td>@student.firstName</td>
-		<td>@student.major</td>
+		<td>@student.studentId</td>
+			<td>
+			@for(major <- majors) {
+				@if(student.majorId == major.majorId) {
+				@major.name
+				}
+			}
+			</td>
 		<td>@form(routes.StudentCtrl.deleteStudent(student.studentId)) {
 		<input type="submit" value="Löschen">
 		}</td>

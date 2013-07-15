@@ -1,0 +1,38 @@
+@(majors: List[Major], majorForm: Form[Major])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Prüfungsverwaltung - Studiengang") {
+
+<h1>Füge einen neuen Studiengang hinzu.</h1>
+@form(routes.MajorCtrl.newMajor()) {
+<input type="text" name="@majorForm("name").name" id="majorName" placeholder="Name">	
+@if(majorForm("name").hasErrors) { 
+@for(error <- majorForm("name").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+    <br>
+<input type="submit" value="Hinzufügen">
+<h2>@majors.size() @if(majors.size()==1) {Studiengang} else {Studiengänge} vorhanden.</h2>
+<table class="Liste">
+	<tr>
+	<th>Bezeichnung</th>
+	<th></th>
+	</tr>
+	@for(major <- majors) {
+	<tr>
+		<td>@major.name</td>
+		<td>@form(routes.MajorCtrl.deleteMajor(major.majorId)) {
+		<input type="submit" value="Löschen">
+		}</td>
+	</tr>
+	}
+</table>
+}
+}

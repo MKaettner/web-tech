@@ -10,13 +10,13 @@ public class ExamCtrl extends Controller {
 	static Form<Exam> examForm = Form.form(Exam.class);
 
 	public static Result exams() {
-		return ok(views.html.exams.render(Exam.all(), examForm, Docent.all()));
+		return ok(views.html.exams.render(Exam.all(), examForm, Docent.all(), Major.all()));
 	}
 
 	public static Result newExam() {
 		Form<Exam> filledForm = examForm.bindFromRequest();
 		if (filledForm.hasErrors()) {
-			return badRequest(views.html.exams.render(Exam.all(), filledForm, Docent.all()));
+			return badRequest(views.html.exams.render(Exam.all(), filledForm, Docent.all(), Major.all()));
 		} else {
 			Exam.create(filledForm.get());
 			return redirect(routes.ExamCtrl.exams());
