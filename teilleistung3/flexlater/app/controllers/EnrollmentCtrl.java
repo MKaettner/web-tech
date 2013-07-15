@@ -9,18 +9,17 @@ public class EnrollmentCtrl extends Controller {
 	static Form<Enrollment> enrollmentForm = Form.form(Enrollment.class);
 	
 	public static Result enrollments() {
-		return ok(views.html.enrollments.render(Enrollment.all(), enrollmentForm));
+		return ok(views.html.enrollments.render(Enrollment.all(), enrollmentForm, Student.all(), Exam.all()));
 	}
 	
 	public static Result newEnrollment() {
 		Form<Enrollment> filledForm = enrollmentForm.bindFromRequest();
 		if (filledForm.hasErrors()) {
-			return badRequest(views.html.enrollments.render(Enrollment.all(), filledForm));
+			return badRequest(views.html.enrollments.render(Enrollment.all(), filledForm, Student.all(), Exam.all()));
 		} else {
 			Enrollment.create(filledForm.get());
 			return redirect(routes.EnrollmentCtrl.enrollments());
 		}
-	
 	}
 	
 	public static Result deleteEnrollment(Integer enrollmentId) {

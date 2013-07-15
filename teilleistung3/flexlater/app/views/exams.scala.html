@@ -1,4 +1,4 @@
-@(exams: List[Exam], examForm: Form[Exam], docents: Map[Integer, String])
+@(exams: List[Exam], examForm: Form[Exam], docents: List[Docent])
 
 @import helper._
 @import helper.twitterBootstrap._
@@ -8,20 +8,31 @@
 
 	<h1>Füge eine neue Prüfung hinzu.</h1>
 	@form(routes.ExamCtrl.newExam()) {
-	<input type="text" name="@examForm("name").name" id="examName" placeholder="Bezeichnung">
-	@if(examForm("name").hasErrors) { 
-		@for(error <- examForm("name").errors) {
-		<span class="help-inline">
-   			@if(error.message== "error.required") {
-   			Eingabe erforderlich 
-			}
-    	</span>
+		<input type="text" name="@examForm("name").name" id="examName" placeholder="Bezeichnung">
+		@if(examForm("name").hasErrors) { 
+			@for(error <- examForm("name").errors) {
+			<span class="help-inline">
+	   			@if(error.message== "error.required") {
+   				Eingabe erforderlich 
+				}
+    		</span>
+    		}
+    	}
+		<br>
+		<input type="text" name="@examForm("place").name" id="examPlace" placeholder="Ort">
+	@if(examForm("place").hasErrors) { 
+		@for(error <- examForm("place").errors) {
+			<span class="help-inline">
+	   			@if(error.message== "error.required") {
+   				Eingabe erforderlich 
+   				} 
+    		</span>
     	}
     }
 	<br>
-	<input type="text" name="@examForm("place").name" id="examPlace" placeholder="Ort">
-	@if(examForm("place").hasErrors) { 
-	@for(error <- examForm("place").errors) {
+	<input type="text" name="@examForm("date").name" id="examDate" placeholder="Datum">
+	@if(examForm("date").hasErrors) { 
+		@for(error <- examForm("date").errors) {
 		<span class="help-inline">
    			@if(error.message== "error.required") {
    			Eingabe erforderlich 
@@ -29,79 +40,60 @@
     	</span>
     	}
     }
-<br>
-<input type="text" name="@examForm("date").name" id="examDate" placeholder="Datum">
-@if(examForm("date").hasErrors) { 
-@for(error <- examForm("date").errors) {
-<span class="help-inline">
-   @if(error.message== "error.required") {
-   Eingabe erforderlich 
-   } 
-    </span>
-    }
-    }
-<br>
-<input type="text" name="@examForm("time").name" id="examTime" placeholder="Uhrzeit">
-@if(examForm("time").hasErrors) { 
-@for(error <- examForm("time").errors) {
-<span class="help-inline">
-   @if(error.message== "error.required") {
-   Eingabe erforderlich 
-   } 
-    </span>
-    }
-    }
-<br>
-<input type="text" name="@examForm("docent").name" id="examDocent" placeholder="Dozent">
-@if(examForm("docent").hasErrors) { 
-@for(error <- examForm("docent").errors) {
-<span class="help-inline">
-   @if(error.message== "error.required") {
-   Eingabe erforderlich 
-   } 
-    </span>
-    }
-    }
-<br>
-<input type="text" name="@examForm("major").name" id="examMajor" placeholder="Studiengang">
-@if(examForm("major").hasErrors) { 
-@for(error <- examForm("major").errors) {
-<span class="help-inline">
-   @if(error.message== "error.required") {
-   Eingabe erforderlich 
-   } 
-    </span>
-    }
-    }
-<br>
-<input type="text" name="@examForm("duration").name" id="examDuration" placeholder="Dauer">
-@if(examForm("duration").hasErrors) { 
-@for(error <- examForm("duration").errors) {
-<span class="help-inline">
-   @if(error.message== "error.required") {
-   Eingabe erforderlich 
-   } 
-    </span>
-    }
-    }
-<br>
-<input type="text" name="@examForm("maxParticipant").name"  id="examParticipant" placeholder="Maximale Teilnehmerzahl">
-@if(examForm("maxParticipant").hasErrors) { 
-@for(error <- examForm("maxParticipant").errors) {
-<span class="help-inline">
-   @if(error.message== "error.required") {
-   Eingabe erforderlich 
-   } 
-    </span>
-    }
+	<br>
+	<input type="text" name="@examForm("time").name" id="examTime" placeholder="Uhrzeit">
+	@if(examForm("time").hasErrors) { 
+		@for(error <- examForm("time").errors) {
+		<span class="help-inline">
+   			@if(error.message== "error.required") {
+   			Eingabe erforderlich 
+   		} 
+    	</span>
+    	}
     }
 	<br>
-	<select name="@examForm("docentId").name id="examDocent">
-	<option value="null"> </option>
-  		@for((docentId, name) <- docents) {
-  		<option value="@docentId">@name</option>
+	<select name="@examForm("docentId").name" id="examDocent" placeholder="Dozent">
+	<option value="">Dozent wählen</option>
+		@for(docent <- docents) {
+		<option value="@docent.docentId">@docent.name</option>
 		}
 	</select>
+	@if(examForm("docentId")=="") {
+	Eingabe erforderlich
+	}
+	<br>
+	<input type="text" name="@examForm("major").name" id="examMajor" placeholder="Studiengang">
+	@if(examForm("major").hasErrors) { 
+		@for(error <- examForm("major").errors) {
+		<span class="help-inline">
+   			@if(error.message== "error.required") {
+   			Eingabe erforderlich 
+   			} 
+    	</span>
+    	}
+    }
+	<br>
+	<input type="text" name="@examForm("duration").name" id="examDuration" placeholder="Dauer">
+	@if(examForm("duration").hasErrors) { 
+		@for(error <- examForm("duration").errors) {
+		<span class="help-inline">
+   			@if(error.message== "error.required") {
+   			Eingabe erforderlich 
+   			} 
+    	</span>
+    	}
+    }
+	<br>
+	<input type="text" name="@examForm("maxParticipant").name"  id="examParticipant" placeholder="Maximale Teilnehmerzahl">
+	@if(examForm("maxParticipant").hasErrors) { 
+		@for(error <- examForm("maxParticipant").errors) {
+		<span class="help-inline">
+   			@if(error.message== "error.required") {
+			Eingabe erforderlich 
+   			} 
+    	</span>
+    	}
+    }
 	<br>
 	<input type="submit" value="Hinzufügen">
 	<h2>@exams.size() @if(exams.size()==1) {Prüfung} else {Prüfungen} vorhanden.</h2>
@@ -124,9 +116,11 @@
 			<td>@exam.date</td>
 			<td>@exam.time</td>
 			<td>
-				@for((docentId, name) <- docents) {
-				@name
-				}
+			@for(docent <- docents) {
+			@if(exam.docentId == docent.docentId) {
+			@docent.name
+			}
+			}
 			</td>
 			<td>@exam.major</td>
 			<td>@exam.duration</td>
@@ -135,8 +129,8 @@
 				<input type="submit" value="Löschen">
 				}
 			</td>
-		</tr>
-		}
+			</tr>
+			}
 	</table>
 	}
 }

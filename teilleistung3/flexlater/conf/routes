@@ -20,8 +20,6 @@ POST	/exams/:id/delete			controllers.ExamCtrl.deleteExam(id: Integer)
 # Docents
 GET		/docents					controllers.DocentCtrl.docents()
 POST	/docents					controllers.DocentCtrl.newDocent()
-POST	/docents/match				controllers.DocentCtrl.matchDocent()
-POST	/docents/:id/update			controllers.DocentCtrl.updateDocent(id: Integer)
 POST	/docents/:id/delete			controllers.DocentCtrl.deleteDocent(id: Integer)
 
 # Enrollments

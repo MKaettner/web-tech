@@ -24,10 +24,10 @@ create table exam (
   place                     varchar(255),
   date                      varchar(255),
   time                      varchar(255),
-  docent                    varchar(255),
   major                     varchar(255),
   duration                  integer,
   max_participant           integer,
+  docent_id                 integer,
   constraint pk_exam primary key (exam_id))
 ;
 

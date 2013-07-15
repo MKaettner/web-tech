@@ -14,8 +14,7 @@ public class Docent extends Model {
 	public Integer docentId;
 	@Required
 	public String name, firstName, chair;
-	@ManyToMany(mappedBy = "docents")
-	public List<Exam> exams;
+
 
 	// Methoden
 
@@ -32,18 +31,5 @@ public class Docent extends Model {
 
 	public static void delete(Integer docentId) {
 		find.ref(docentId).delete();
-	}
-
-	public static void update(Docent updatedDocent) {
-		updatedDocent.update();
-	}
-
-	public static Map<Integer, String> getAllAsMap() {
-		HashMap<Integer, String> docentsMap = new HashMap<Integer, String>();
-		List<Docent> docents = Docent.read();
-		for (Docent docent : docents) {
-			docentsMap.put(docent.docentId, docent.name);
-		}
-		return docentMap;
 	}
 }

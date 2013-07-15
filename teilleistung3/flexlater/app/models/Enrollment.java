@@ -18,7 +18,7 @@ public class Enrollment extends Model {
 	// Methoden
 
 	public static Finder<Integer, Enrollment> find = new Finder<Integer, Enrollment> (Integer.class, Enrollment.class);
-
+	
 	public static Enrollment find(Integer enrollmentId) {
 		return find.ref(enrollmentId);
 	}

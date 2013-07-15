@@ -4,7 +4,7 @@ $(function() {
         content: 'Die Bezeichnung für die Prüfung, z.B. <i>Web-Technologien</i>',
         placement: 'top',
         html: true,
-        trigger: 'hover'
+        trigger: 'focus'
     });
 });
 $(function() { 
@@ -13,7 +13,7 @@ $(function() {
         content: 'Ort und Raum für die Prüfung, z.B. <i>WE5/00.017</i>',
         placement: 'top',
         html: true,
-        trigger: 'hover'
+        trigger: 'focus'
     });
 });
 $(function() { 
@@ -22,7 +22,7 @@ $(function() {
         content: 'Das Datum für die Prüfung im Format dd.mm.yyyy, z.B. <i>15.08.2013</i>',
         placement: 'top',
         html: true,
-        trigger: 'hover'
+        trigger: 'focus'
     });
 });
 $(function() { 
@@ -31,7 +31,7 @@ $(function() {
         content: 'Die Uhrzeit zu der die Prüfung beginnt im Format hh:mm, z.B. <i>09:30</i>',
         placement: 'top',
         html: true,
-        trigger: 'hover'
+        trigger: 'focus'
     });
 });
 $(function() { 
@@ -40,7 +40,7 @@ $(function() {
         content: 'Der Name des Dozenten der die Prüfung stellt, z.B. <i>Prof. Henrich</i>',
         placement: 'top',
         html: true,
-        trigger: 'hover'
+        trigger: 'focus'
     });
 });
 $(function() { 
@@ -49,7 +49,7 @@ $(function() {
         content: 'Der Studiengang dessen Studenten sich für diese Prüfung anmelden können, z.B. <i>Wirtschaftsinformatik</i>',
         placement: 'top',
         html: true,
-        trigger: 'hover'
+        trigger: 'focus'
     });
 });
 $(function() { 
@@ -58,7 +58,7 @@ $(function() {
         content: 'Die Dauer dieser Prüfung in Minuten, z.B. <i>90</i>',
         placement: 'top',
         html: true,
-        trigger: 'hover'
+        trigger: 'focus'
     });
 });
 $(function() { 
@@ -67,7 +67,7 @@ $(function() {
         content: 'Die maximale Zahl an Prüfungsteilnehmern, z.B. <i>50</i>',
         placement: 'top',
         html: true,
-        trigger: 'hover'
+        trigger: 'focus'
     });
 });
 $(function() { 
@@ -76,7 +76,7 @@ $(function() {
         content: 'Der Nachname des Studierenden, z.B. <i>Musterfrau</i>',
         placement: 'top',
         html: true,
-        trigger: 'hover'
+        trigger: 'focus'
     });
 });
 $(function() { 
@@ -85,7 +85,7 @@ $(function() {
         content: 'Der Vorname des Studierenden, z.B. <i>Erika</i>',
         placement: 'top',
         html: true,
-        trigger: 'hover'
+        trigger: 'focus'
     });
 });
 $(function() { 
@@ -94,7 +94,7 @@ $(function() {
         content: 'Der Studiengang des Studierenden, z.B. <i>Wirtschaftsinformatik</i>',
         placement: 'top',
         html: true,
-        trigger: 'hover'
+        trigger: 'focus'
     });
 });
 $(function() { 
@@ -103,7 +103,7 @@ $(function() {
         content: 'Der Nachname des Dozierenden, z.B. <i>Mustermann</i>',
         placement: 'top',
         html: true,
-        trigger: 'hover'
+        trigger: 'focus'
     });
 });
 $(function() { 
@@ -112,7 +112,7 @@ $(function() {
         content: 'Der Vorname des Dozierenden, z.B. <i>Max</i>',
         placement: 'top',
         html: true,
-        trigger: 'hover'
+        trigger: 'focus'
     });
 });
 $(function() { 
@@ -121,6 +121,6 @@ $(function() {
         content: 'Die Bezeichnung des Lehrstuhls, z.B. <i>Medieninformatik</i>',
         placement: 'top',
         html: true,
-        trigger: 'hover'
+        trigger: 'focus'
     });
 });

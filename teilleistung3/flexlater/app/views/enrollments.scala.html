@@ -1,4 +1,4 @@
-@(enrollments: List[Enrollment], enrollmentForm: Form[Enrollment])
+@(enrollments: List[Enrollment], enrollmentForm: Form[Enrollment], students: List[Student], exams: List[Exam])
 
 @import helper._
 @import helper.twitterBootstrap._
@@ -6,19 +6,48 @@
 @main("Prüfungsverwaltung - Prüfungsanmeldung") {
 
 <h1>Füge eine neue Prüfung hinzu.</h1>
+	
+	@form(routes.EnrollmentCtrl.newEnrollment()) {
+		<select name="@enrollmentForm("examId").name" id="enrollmentExam">
+		<option value="null">Prüfung wählen</option>
+		@for(exam <- exams) {
+			<option value="@exam.examId">@exam.name</option>
+			}
+		</select>
+
+		<select name="@enrollmentForm("studentId").name" id="enrollmentStudent">
+		<option value="null">Studenten wählen</option>
+		@for(student <- students) {
+			<option value="@student.studentId">@student.name</option>
+			}
+		</select>
+		<input type="submit" value="Hinzufügen">
+	}
+
+
 <h2>@enrollments.size() @if(enrollments.size()==1) {Prüfungsanmeldung} else {Prüfungsanmeldungen} vorhanden.</h2>
 <table class="Liste">
 	<tr>
-	<th>Prüfungsanmeldungs-ID</th>
 	<th>Prüfungs-ID</th>
 	<th>Studenten-ID</th>
 	<th></th>
 	</tr>
 	@for(enrollment <- enrollments) {
 	<tr>
-		<td>@enrollment.enrollmentId</td>
-		<td>@enrollment.examId</td>
-		<td>@enrollment.studentId</td>
+		<td>
+		@for(exam <- exams) {
+		@if(enrollment.examId == exam.examId) {
+		@exam.name
+		}
+		}
+		</td>
+		<td>
+		@for(student <- students) {
+		@if(enrollment.studentId == student.studentId) {
+		@student.name
+		}
+		}
+		</td>
 		<td>@form(routes.EnrollmentCtrl.deleteEnrollment(enrollment.enrollmentId)) {
 		<input type="submit" value="Löschen">
 		}</td>
