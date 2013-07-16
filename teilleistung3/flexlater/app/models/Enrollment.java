@@ -12,12 +12,12 @@ public class Enrollment extends Model {
 	// Attribute
 	@Id
 	public Integer enrollmentId;
+	@ManyToOne
 	@Required
-	public Integer examId, studentId;
-	@ManyToMany(cascade=CascadeType.PERSIST)
-	public List<Exam> exams;
-	
-
+	public Student student;
+	@ManyToOne
+	@Required
+	public Exam exam;
 	// Methoden
 
 	public static Finder<Integer, Enrollment> find = new Finder<Integer, Enrollment> (Integer.class, Enrollment.class);

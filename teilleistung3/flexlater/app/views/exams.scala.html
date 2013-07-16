@@ -16,6 +16,11 @@
    				Eingabe erforderlich 
 				}
     		</span>
+    		<span class="help-inline">
+    			@if(true) {
+    			Eingabe zu kurz!
+    			}
+    		</span>
     		}
     	}
 		<br>
@@ -95,6 +100,7 @@
     }
 	<br>
 	<input type="submit" value="Hinzufügen">
+	}
 	<h2>@exams.size() @if(exams.size()==1) {Prüfung} else {Prüfungen} vorhanden.</h2>
 	<table class="Liste">
 		<tr>
@@ -138,4 +144,3 @@
 			}
 	</table>
 	}
-}

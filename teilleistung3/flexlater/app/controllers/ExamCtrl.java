@@ -15,13 +15,16 @@ public class ExamCtrl extends Controller {
 
 	public static Result newExam() {
 		Form<Exam> filledForm = examForm.bindFromRequest();
-		if (filledForm.hasErrors()) {
+		if ((filledForm.field("name").value()).length()<5) {
+			return badRequest(views.html.exams.render(Exam.all(), filledForm, Docent.all(), Major.all()));
+		} else if (filledForm.hasErrors()) {
 			return badRequest(views.html.exams.render(Exam.all(), filledForm, Docent.all(), Major.all()));
 		} else {
 			Exam.create(filledForm.get());
 			return redirect(routes.ExamCtrl.exams());
 		}
 	}
+
 
 	public static Result deleteExam(Integer examId) {
 		Exam.delete(examId);

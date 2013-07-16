@@ -41,6 +41,7 @@
     }
 <br>
 <input type="submit" value="Hinzufügen">
+}
 <h2>@docents.size() @if(docents.size()==1) {Dozent} else {Dozenten} vorhanden.</h2>
 <table class="Liste">
 	<tr>
@@ -54,11 +55,13 @@
 		<td>@docent.name</td>
 		<td>@docent.firstName</td>
 		<td>@docent.chair</td>
-		<td>@form(routes.DocentCtrl.deleteDocent(docent.docentId)) {
+		<td>
+		@form(routes.DocentCtrl.deleteDocent(docent.docentId)) {
 		<input type="submit" value="Löschen">
-		}</td>
+		}
+		</td>
 	</tr>
 	}
 </table>
 }
-}
+

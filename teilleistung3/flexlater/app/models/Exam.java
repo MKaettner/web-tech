@@ -18,11 +18,11 @@ public class Exam extends Model {
 	public String name, place, date, time;
 	@Required
 	public Integer duration, maxParticipant, docentId, majorId;
-	@ManyToMany(mappedBy="exams")
+	@OneToMany(mappedBy="exam",cascade=CascadeType.ALL)
 	public List<Enrollment> enrollments;
-	@ManyToMany(cascade=CascadeType.PERSIST)
-	public List<Docent> docents;
-
+//	@ManyToOne
+//	@Required
+//	public Docent docent;
 	// Methoden
 	
 	public static Finder<Integer, Exam> find = new Finder<Integer, Exam> (Integer.class, Exam.class);

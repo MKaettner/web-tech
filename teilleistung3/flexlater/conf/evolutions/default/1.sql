@@ -13,8 +13,8 @@ create table docent (
 
 create table enrollment (
   enrollment_id             integer not null,
-  exam_id                   integer,
-  student_id                integer,
+  student_student_id        integer,
+  exam_exam_id              integer,
   constraint pk_enrollment primary key (enrollment_id))
 ;
 
@@ -46,18 +46,6 @@ create table student (
 ;
 
 
-create table enrollment_exam (
-  enrollment_enrollment_id       integer not null,
-  exam_exam_id                   integer not null,
-  constraint pk_enrollment_exam primary key (enrollment_enrollment_id, exam_exam_id))
-;
-
-create table exam_docent (
-  exam_exam_id                   integer not null,
-  docent_docent_id               integer not null,
-  constraint pk_exam_docent primary key (exam_exam_id, docent_docent_id))
-;
-
 create table major_student (
   major_major_id                 integer not null,
   student_student_id             integer not null,
@@ -73,16 +61,12 @@ create sequence major_seq;
 
 create sequence student_seq;
 
+alter table enrollment add constraint fk_enrollment_student_1 foreign key (student_student_id) references student (student_id) on delete restrict on update restrict;
+create index ix_enrollment_student_1 on enrollment (student_student_id);
+alter table enrollment add constraint fk_enrollment_exam_2 foreign key (exam_exam_id) references exam (exam_id) on delete restrict on update restrict;
+create index ix_enrollment_exam_2 on enrollment (exam_exam_id);
 
 
-
-alter table enrollment_exam add constraint fk_enrollment_exam_enrollment_01 foreign key (enrollment_enrollment_id) references enrollment (enrollment_id) on delete restrict on update restrict;
-
-alter table enrollment_exam add constraint fk_enrollment_exam_exam_02 foreign key (exam_exam_id) references exam (exam_id) on delete restrict on update restrict;
-
-alter table exam_docent add constraint fk_exam_docent_exam_01 foreign key (exam_exam_id) references exam (exam_id) on delete restrict on update restrict;
-
-alter table exam_docent add constraint fk_exam_docent_docent_02 foreign key (docent_docent_id) references docent (docent_id) on delete restrict on update restrict;
 
 alter table major_student add constraint fk_major_student_major_01 foreign key (major_major_id) references major (major_id) on delete restrict on update restrict;
 
@@ -94,11 +78,7 @@ SET REFERENTIAL_INTEGRITY FALSE;
 
 drop table if exists docent;
 
-drop table if exists exam_docent;
-
 drop table if exists enrollment;
-
-drop table if exists enrollment_exam;
 
 drop table if exists exam;
 

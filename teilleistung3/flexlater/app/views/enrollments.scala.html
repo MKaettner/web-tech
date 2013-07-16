@@ -8,14 +8,14 @@
 <h1>Füge eine neue Prüfung hinzu.</h1>
 	
 	@form(routes.EnrollmentCtrl.newEnrollment()) {
-		<select name="@enrollmentForm("examId").name" id="enrollmentExam">
+		<select name="exam.examId" id="enrollmentExam">
 		<option value="null">Prüfung wählen</option>
 		@for(exam <- exams) {
 			<option value="@exam.examId">@exam.name</option>
 			}
 		</select>
 
-		<select name="@enrollmentForm("studentId").name" id="enrollmentStudent">
+		<select name="student.studentId" id="enrollmentStudent">
 		<option value="null">Studenten wählen</option>
 		@for(student <- students) {
 			<option value="@student.studentId">@student.name</option>
@@ -28,26 +28,18 @@
 <h2>@enrollments.size() @if(enrollments.size()==1) {Prüfungsanmeldung} else {Prüfungsanmeldungen} vorhanden.</h2>
 <table class="Liste">
 	<tr>
-	<th>Prüfungs-ID</th>
-	<th>Studenten-ID</th>
+	<th>Prüfung</th>
+	<th>Student</th>
 	<th></th>
 	</tr>
 	@for(enrollment <- enrollments) {
 	<tr>
-		<td>
-		@for(exam <- exams) {
-		@if(enrollment.examId == exam.examId) {
-		@exam.name
-		}
-		}
-		</td>
-		<td>
-		@for(student <- students) {
-		@if(enrollment.studentId == student.studentId) {
-		@student.name
-		}
-		}
-		</td>
+	<td>
+	@enrollment.student.name
+	</td>
+	<td>
+	@enrollment.exam.name
+	</td>
 		<td>@form(routes.EnrollmentCtrl.deleteEnrollment(enrollment.enrollmentId)) {
 		<input type="submit" value="Löschen">
 		}</td>

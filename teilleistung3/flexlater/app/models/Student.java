@@ -16,8 +16,8 @@ public class Student extends Model {
 	public String name, firstName;
 	@Required
 	public Integer majorId;
-	@ManyToMany(mappedBy="students")
-	public List<Major> majors;
+	@OneToMany(mappedBy="student",cascade=CascadeType.ALL)
+	public List<Enrollment> enrollments;
 	
 
 	// Methoden
