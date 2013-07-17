@@ -34,4 +34,8 @@ public class Major extends Model {
 	public static void delete(Integer majorId) {
 		find.ref(majorId).delete();
 	}
+	
+	public static void edit(Major updatedMajor) {
+		updatedMajor.update();
+	}
 }

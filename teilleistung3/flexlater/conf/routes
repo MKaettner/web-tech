@@ -9,28 +9,32 @@ GET     /                           controllers.Application.index()
 GET		/students					controllers.StudentCtrl.students()
 POST	/students					controllers.StudentCtrl.newStudent()
 POST	/students/:id/delete		controllers.StudentCtrl.deleteStudent(id: Integer)
-
+POST	/students/:id/edit			controllers.StudentCtrl.editStudent(id: Integer)
 
 # Exams
 GET		/exams						controllers.ExamCtrl.exams()
 POST	/exams						controllers.ExamCtrl.newExam()
 POST	/exams/:id/delete			controllers.ExamCtrl.deleteExam(id: Integer)
+POST	/exams/:id/edit				controllers.ExamCtrl.editExam(id: Integer)
 
 
 # Docents
 GET		/docents					controllers.DocentCtrl.docents()
 POST	/docents					controllers.DocentCtrl.newDocent()
 POST	/docents/:id/delete			controllers.DocentCtrl.deleteDocent(id: Integer)
+POST	/docents/:id/edit			controllers.DocentCtrl.editDocent(id: Integer)
 
 # Enrollments
 GET		/enrollments				controllers.EnrollmentCtrl.enrollments()
 POST	/enrollments				controllers.EnrollmentCtrl.newEnrollment()
 POST	/enrollments/:id/delete		controllers.EnrollmentCtrl.deleteEnrollment(id: Integer)
+POST	/enrollments/:id/edit		controllers.EnrollmentCtrl.editEnrollment(id: Integer)
 
 # Majors
 GET		/majors						controllers.MajorCtrl.majors()
 POST	/majors						controllers.MajorCtrl.newMajor()
 POST	/majors/:id/delete			controllers.MajorCtrl.deleteMajor(id: Integer)
+POST	/majors/:id/edit			controllers.MajorCtrl.editMajor(id: Integer)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

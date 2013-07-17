@@ -27,5 +27,10 @@ public class StudentCtrl extends Controller {
 		Student.delete(studentId);
 		return redirect(routes.StudentCtrl.students());
 	}
-
+	public static Result editStudent(Integer studentId) {
+		Student student = new Student().find.byId(studentId);
+		Form<Student> filledForm = Form.form(Student.class).fill(student);
+			return ok(views.html.students.render(Student.read()));
+		}
+	}
 }

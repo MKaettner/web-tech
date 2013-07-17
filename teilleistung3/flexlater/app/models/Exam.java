@@ -38,5 +38,8 @@ public class Exam extends Model {
 	public static void delete(Integer examId) {
 		find.ref(examId).delete();
 	}
-
+	
+	public static void edit(Exam updatedExam) {
+		updatedExam.update();
+	}
 }

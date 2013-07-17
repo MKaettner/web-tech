@@ -32,4 +32,8 @@ public class Docent extends Model {
 	public static void delete(Integer docentId) {
 		find.ref(docentId).delete();
 	}
+	
+	public static void edit(Docent updatedDocent) {
+		updatedDocent.update();
+	}
 }

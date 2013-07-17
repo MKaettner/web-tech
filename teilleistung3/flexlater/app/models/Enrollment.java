@@ -37,5 +37,8 @@ public class Enrollment extends Model {
 	public static void delete(Integer enrollmentId) {
 		find.ref(enrollmentId).delete();
 	}
-
+	
+	public static void edit(Enrollment updatedEnrollment) {
+		updatedEnrollment.update();
+	}
 }
