@@ -49,6 +49,7 @@
 	<th>Matrikelnummer</th>
 	<th>Studiengang</th>
 	<th></th>
+	<th></th>
 	</tr>
 	@for(student <- students) {
 	<tr>
@@ -61,10 +62,17 @@
 				@major.name
 				}
 			}
-			</td>
-		<td>@form(routes.StudentCtrl.deleteStudent(student.studentId)) {
+		</td>
+		<td>
+		@form(routes.StudentCtrl.editStudent(student.studentId)) {
+		<input type="submit" value="Bearbeiten">
+		}
+		</td>
+		<td>
+		@form(routes.StudentCtrl.deleteStudent(student.studentId)) {
 		<input type="submit" value="Löschen">
-		}</td>
+		}
+		</td>
 	</tr>
 	}
 </table>

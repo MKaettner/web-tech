@@ -22,7 +22,7 @@ public class MajorCtrl extends Controller {
 			return redirect(routes.MajorCtrl.majors());
 		}
 	}
-	
+
 	public static Result deleteMajor(Integer majorId) {
 		Major.delete(majorId);
 		return redirect(routes.MajorCtrl.majors());

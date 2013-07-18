@@ -39,6 +39,4 @@ public class Student extends Model {
 	public static void edit(Student updatedStudent) {
 		updatedStudent.update();
 	}
-
-	
 }

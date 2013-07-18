@@ -1,0 +1,49 @@
+@(formType: String, studentForm: Form[Student], majors: List[Major])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main(formType + " Student") { 
+	<h1>@formType Student</h1>
+	@form(routes.StudentCtrl.storeStudent()) {  
+		<input type="hidden" id="@studentForm("studentId").id" name="@studentForm("studentId").name" value='@studentForm("studentId").value' /> 
+		<input type="text" name="@studentForm("name").name" id="studentName" value="@studentForm("name").value">
+@if(studentForm("name").hasErrors) { 
+@for(error <- studentForm("name").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+    <br>
+<input type="text" name="@studentForm("firstName").name" id="studentFirstName" value="@studentForm("firstName").value">
+@if(studentForm("firstName").hasErrors) { 
+@for(error <- studentForm("firstName").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+    <br>
+		<select name="@studentForm("majorId").name" id="studentMajor" value="@studentForm("majorId").value">
+		<option value="@studentForm("majorId").value">@studentForm("majorId").value</option>
+			@for(major <- majors) {
+			@if(major.majorId != studentForm("majorId").value) {
+			
+				<option value="major.majorId">
+				@major.majorId @major.name
+				</option>
+				}
+			}
+		</select>
+			@if(studentForm("majorId")==null) {
+			Eingabe erforderlich
+			}
+		<br>
+		<input type="submit" value="Save"> 
+	}
+}

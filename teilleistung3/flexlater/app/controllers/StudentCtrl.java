@@ -9,7 +9,8 @@ public class StudentCtrl extends Controller {
 	static Form<Student> studentForm = Form.form(Student.class);
 
 	public static Result students() {
-		return ok(views.html.students.render(Student.all(), studentForm, Major.all()));
+		return ok(views.html.students.render(Student.all(), studentForm,
+				Major.all()));
 	}
 
 	public static Result newStudent() {
@@ -27,10 +28,26 @@ public class StudentCtrl extends Controller {
 		Student.delete(studentId);
 		return redirect(routes.StudentCtrl.students());
 	}
+
 	public static Result editStudent(Integer studentId) {
 		Student student = new Student().find.byId(studentId);
 		Form<Student> filledForm = Form.form(Student.class).fill(student);
-			return ok(views.html.students.render(Student.read()));
+		return ok(views.html.studentForm.render("Bearbeite", filledForm, Major.all()));
+	}
+
+	public static Result storeStudent() {
+		Form<Student> filledForm = studentForm.bindFromRequest();
+		if (filledForm.hasErrors()) {
+			System.out.println(filledForm);
+			return ok(views.html.studentForm.render("Fehler beim bearbeiten von", filledForm, Major.all()));
+		} else {
+			Student student = filledForm.get();
+			if (student.studentId == null) {
+				Student.create(student);
+			} else {
+				Student.edit(student);
+			}
+			return ok(views.html.students.render(Student.all(), studentForm, Major.all()));
 		}
 	}
 }

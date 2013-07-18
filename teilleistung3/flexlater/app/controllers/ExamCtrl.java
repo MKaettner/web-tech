@@ -25,7 +25,6 @@ public class ExamCtrl extends Controller {
 		}
 	}
 
-
 	public static Result deleteExam(Integer examId) {
 		Exam.delete(examId);
 		return redirect(routes.ExamCtrl.exams());
