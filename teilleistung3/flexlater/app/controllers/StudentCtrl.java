@@ -39,7 +39,7 @@ public class StudentCtrl extends Controller {
 		Form<Student> filledForm = studentForm.bindFromRequest();
 		if (filledForm.hasErrors()) {
 			System.out.println(filledForm);
-			return ok(views.html.studentForm.render("Fehler beim bearbeiten von", filledForm, Major.all()));
+			return badRequest(views.html.studentForm.render("Fehler beim Bearbeiten von", filledForm, Major.all()));
 		} else {
 			Student student = filledForm.get();
 			if (student.studentId == null) {

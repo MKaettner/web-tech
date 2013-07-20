@@ -1,0 +1,45 @@
+@(formType: String, docentForm: Form[Docent])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main(formType + " Docent") { 
+	<h1>@formType Docent</h1>
+	@form(routes.DocentCtrl.storeDocent()) {  
+		<input type="hidden" id="@docentForm("docentId").id" name="@docentForm("docentId").name" value='@docentForm("docentId").value' /> 
+		<input type="text" name="@docentForm("name").name" id="docentName" value="@docentForm("name").value">
+@if(docentForm("name").hasErrors) { 
+@for(error <- docentForm("name").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+    <br>
+<input type="text" name="@docentForm("firstName").name" id="docentFirstName" value="@docentForm("firstName").value">
+@if(docentForm("firstName").hasErrors) { 
+@for(error <- docentForm("firstName").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+    <br>
+    <input type="text" name="@docentForm("chair").name" id="docentChair" value="@docentForm("chair").value">
+@if(docentForm("chair").hasErrors) { 
+@for(error <- docentForm("chair").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+    <br>
+		<input type="submit" value="Save"> 
+	}
+}

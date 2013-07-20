@@ -38,7 +38,4 @@ public class Enrollment extends Model {
 		find.ref(enrollmentId).delete();
 	}
 	
-	public static void edit(Enrollment updatedEnrollment) {
-		updatedEnrollment.update();
-	}
 }

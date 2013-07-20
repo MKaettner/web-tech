@@ -26,5 +26,4 @@ public class EnrollmentCtrl extends Controller {
 		Enrollment.delete(enrollmentId);
 		return redirect(routes.EnrollmentCtrl.enrollments());
 	}
-	
 }

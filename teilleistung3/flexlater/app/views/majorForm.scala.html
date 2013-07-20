@@ -1,0 +1,23 @@
+@(formType: String, majorForm: Form[Major])
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@main(formType + " Major") { 
+	<h1>@formType Major</h1>
+	@form(routes.MajorCtrl.storeMajor()) {  
+		<input type="hidden" id="@majorForm("majorId").id" name="@majorForm("majorId").name" value='@majorForm("majorId").value' /> 
+		<input type="text" name="@majorForm("name").name" id="majorName" value="@majorForm("name").value">
+@if(majorForm("name").hasErrors) { 
+@for(error <- majorForm("name").errors) {
+<span class="help-inline">
+   @if(error.message== "error.required") {
+   Eingabe erforderlich 
+   } 
+    </span>
+    }
+    }
+    <br>
+	<input type="submit" value="Save"> 
+	}
+}

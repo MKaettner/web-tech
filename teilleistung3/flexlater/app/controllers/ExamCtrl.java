@@ -29,4 +29,25 @@ public class ExamCtrl extends Controller {
 		Exam.delete(examId);
 		return redirect(routes.ExamCtrl.exams());
 	}
+	public static Result editExam(Integer examId) {
+		Exam exam = new Exam().find.byId(examId);
+		Form<Exam> filledForm = Form.form(Exam.class).fill(exam);
+		return ok(views.html.examForm.render("Bearbeite", filledForm, Major.all(), Docent.all()));
+	}
+
+	public static Result storeExam() {
+		Form<Exam> filledForm = examForm.bindFromRequest();
+		if (filledForm.hasErrors()) {
+			System.out.println(filledForm);
+			return badRequest(views.html.examForm.render("Fehler beim Bearbeiten von", filledForm, Major.all(), Docent.all()));
+		} else {
+			Exam exam = filledForm.get();
+			if (exam.examId == null) {
+				Exam.create(exam);
+			} else {
+				Exam.edit(exam);
+			}
+			return ok(views.html.exams.render(Exam.all(), examForm, Docent.all(), Major.all()));
+		}
+	}
 }

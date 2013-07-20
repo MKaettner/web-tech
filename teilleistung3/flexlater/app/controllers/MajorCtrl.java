@@ -27,4 +27,25 @@ public class MajorCtrl extends Controller {
 		Major.delete(majorId);
 		return redirect(routes.MajorCtrl.majors());
 	}
+	public static Result editMajor(Integer majorId) {
+		Major major = new Major().find.byId(majorId);
+		Form<Major> filledForm = Form.form(Major.class).fill(major);
+		return ok(views.html.majorForm.render("Bearbeite", filledForm));
+	}
+
+	public static Result storeMajor() {
+		Form<Major> filledForm = majorForm.bindFromRequest();
+		if (filledForm.hasErrors()) {
+			System.out.println(filledForm);
+			return badRequest(views.html.majorForm.render("Fehler beim Bearbeiten von", filledForm));
+		} else {
+			Major major = filledForm.get();
+			if (major.majorId == null) {
+				Major.create(major);
+			} else {
+				Major.edit(major);
+			}
+			return ok(views.html.majors.render(Major.all(), majorForm));
+		}
+	}
 }

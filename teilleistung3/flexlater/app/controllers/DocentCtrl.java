@@ -27,4 +27,26 @@ public class DocentCtrl extends Controller {
 		Docent.delete(docentId);
 		return redirect(routes.DocentCtrl.docents());
 	}
+	
+	public static Result editDocent(Integer docentId) {
+		Docent docent = new Docent().find.byId(docentId);
+		Form<Docent> filledForm = Form.form(Docent.class).fill(docent);
+		return ok(views.html.docentForm.render("Bearbeite", filledForm));
+	}
+
+	public static Result storeDocent() {
+		Form<Docent> filledForm = docentForm.bindFromRequest();
+		if (filledForm.hasErrors()) {
+			System.out.println(filledForm);
+			return badRequest(views.html.docentForm.render("Fehler beim Bearbeiten von", filledForm));
+		} else {
+			Docent docent = filledForm.get();
+			if (docent.docentId == null) {
+				Docent.create(docent);
+			} else {
+				Docent.edit(docent);
+			}
+			return ok(views.html.docents.render(Docent.all(), docentForm));
+		}
+	}
 }

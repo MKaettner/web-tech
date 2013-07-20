@@ -29,9 +29,16 @@
 	@for(major <- majors) {
 	<tr>
 		<td>@major.name</td>
-		<td>@form(routes.MajorCtrl.deleteMajor(major.majorId)) {
+		<td>
+		@form(routes.MajorCtrl.editMajor(major.majorId)) {
+		<input type="submit" value="Bearbeiten">
+		}
+		</td>
+		<td>
+		@form(routes.MajorCtrl.deleteMajor(major.majorId)) {
 		<input type="submit" value="Löschen">
-		}</td>
+		}
+		</td>
 	</tr>
 	}
 </table>

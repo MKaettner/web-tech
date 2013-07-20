@@ -136,9 +136,15 @@
 			</td>
 			<td>@exam.duration</td>
 			<td>@exam.maxParticipant</td>
-				<td>@form(routes.ExamCtrl.deleteExam(exam.examId)) {
-				<input type="submit" value="Löschen">
-				}
+			<td>
+			@form(routes.ExamCtrl.editExam(exam.examId)) {
+			<input type="submit" value="Bearbeiten">
+			}
+			</td>
+			<td>
+			@form(routes.ExamCtrl.deleteExam(exam.examId)) {
+			<input type="submit" value="Löschen">
+			}
 			</td>
 			</tr>
 			}

@@ -30,14 +30,10 @@
     }
     <br>
 		<select name="@studentForm("majorId").name" id="studentMajor" value="@studentForm("majorId").value">
-		<option value="@studentForm("majorId").value">@studentForm("majorId").value</option>
 			@for(major <- majors) {
-			@if(major.majorId != studentForm("majorId").value) {
-			
-				<option value="major.majorId">
-				@major.majorId @major.name
+				<option value="@major.majorId">
+				@major.name
 				</option>
-				}
 			}
 		</select>
 			@if(studentForm("majorId")==null) {

@@ -56,6 +56,11 @@
 		<td>@docent.firstName</td>
 		<td>@docent.chair</td>
 		<td>
+		@form(routes.DocentCtrl.editDocent(docent.docentId)) {
+		<input type="submit" value="Bearbeiten">
+		}
+		</td>		
+		<td>
 		@form(routes.DocentCtrl.deleteDocent(docent.docentId)) {
 		<input type="submit" value="Löschen">
 		}
